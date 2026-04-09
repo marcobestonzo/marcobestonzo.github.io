@@ -6,29 +6,23 @@
 <title>Marco Bestonzo — Product Leader & Venture Builder</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
-:root {
-  --black: #0a0a0a;
-  --white: #f8f6f1;
-  --accent: #c8f03c;
-  --mid: #6b6a66;
-  --border: rgba(10,10,10,0.1);
-  --pad: clamp(1.5rem,5vw,3.5rem);
-}
+:root{--black:#0a0a0a;--white:#f8f6f1;--accent:#c8f03c;--mid:#6b6a66;--border:rgba(10,10,10,0.1);--pad:clamp(1.5rem,5vw,3.5rem)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--white);color:var(--black);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden}
-
-/* ── PAGES ── */
 .page{display:none;min-height:100vh}
 .page.active{display:block}
 
-/* ── NAV ── */
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.1rem var(--pad);background:rgba(248,246,241,0.93);backdrop-filter:blur(16px);border-bottom:0.5px solid var(--border)}
 .nav-logo{font-family:'DM Serif Display',serif;font-size:1.05rem;cursor:pointer;text-decoration:none;color:var(--black)}
 .nav-links{display:flex;gap:1.8rem;align-items:center}
 .nav-links a{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .2s;cursor:pointer}
 .nav-links a:hover{color:var(--black)}
-.nav-cta{background:var(--black)!important;color:var(--white)!important;padding:7px 18px;border-radius:100px;font-size:11px!important}
+.nav-cta{background:var(--black)!important;color:var(--white)!important;padding:7px 18px;border-radius:100px;font-size:11px!important;letter-spacing:.06em!important}
+.lang-toggle{display:flex;align-items:center;gap:0;border:0.5px solid var(--border);border-radius:100px;overflow:hidden;margin-left:.5rem}
+.lang-btn{font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;cursor:pointer;background:none;border:none;color:var(--mid);transition:all .15s;font-family:'DM Sans',sans-serif}
+.lang-btn.active{background:var(--black);color:var(--white)}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
 .hamburger span{display:block;width:22px;height:1.5px;background:var(--black);transition:all .3s}
 .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
@@ -38,7 +32,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .mobile-nav.open{display:flex}
 .mobile-nav a{text-decoration:none;color:var(--black);font-size:1rem;cursor:pointer}
 
-/* ── HERO ── */
+/* HERO */
 .hero{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;padding-top:60px}
 .hero-left{padding:5rem var(--pad) 4rem;display:flex;flex-direction:column;justify-content:center;gap:1.5rem}
 .hero-kicker{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);border:0.5px solid var(--border);padding:5px 14px;border-radius:100px;width:fit-content}
@@ -55,9 +49,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .stat-n.accent{color:var(--accent)}
 .stat-l{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35)}
 
-/* ── CREDENTIAL STRIP ── */
+/* CRED STRIP */
 .cred-strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border)}
-.cred{padding:1.75rem var(--pad);border-right:0.5px solid var(--border);transition:background .2s;cursor:default}
+.cred{padding:1.75rem var(--pad);border-right:0.5px solid var(--border);transition:background .2s}
 .cred:last-child{border-right:none}
 .cred:hover{background:rgba(10,10,10,.03)}
 .cred-eyebrow{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:.5rem}
@@ -67,11 +61,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .cred-accent .cred-eyebrow,.cred-accent .cred-src{color:rgba(255,255,255,.4)}
 .cred-accent .cred-val{color:var(--accent);font-size:1.6rem}
 
-/* ── SECTION LABEL ── */
+/* SECTION LABEL */
 .section-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--mid);display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem}
 .section-label::after{content:'';flex:1;height:0.5px;background:var(--border)}
 
-/* ── CAREER ── */
+/* CAREER */
 .career{padding:5rem var(--pad)}
 .chapter{display:grid;grid-template-columns:120px 1fr;gap:2.5rem;padding:2rem 0;border-bottom:0.5px solid var(--border)}
 .chapter:last-child{border-bottom:none}
@@ -86,10 +80,34 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .tag{font-size:10px;padding:3px 10px;border-radius:100px;background:rgba(10,10,10,.06);color:rgba(10,10,10,.55)}
 .tag-hl{background:var(--black);color:var(--accent)}
 .tag-brand{background:transparent;color:rgba(10,10,10,.6);border:0.5px solid rgba(10,10,10,.2)}
-.ch-link{font-size:12px;color:var(--mid);text-decoration:none;margin-top:.75rem;display:inline-flex;align-items:center;gap:6px;border-bottom:0.5px solid var(--border);padding-bottom:2px;transition:all .2s;cursor:pointer}
+.ch-link{font-size:12px;color:var(--mid);text-decoration:none;margin-top:.75rem;display:inline-flex;align-items:center;gap:6px;border-bottom:0.5px solid var(--border);padding-bottom:2px;transition:all .2s;cursor:pointer;background:none;border-top:none;border-left:none;border-right:none}
 .ch-link:hover{color:var(--black);border-bottom-color:var(--black)}
 
-/* ── RECOGNITION ── */
+/* CASE STUDIES */
+.cases{padding:5rem var(--pad);background:rgba(10,10,10,.02);border-top:0.5px solid var(--border)}
+.case-item{border:0.5px solid var(--border);border-radius:8px;margin-bottom:1rem;overflow:hidden;background:var(--white)}
+.case-header{display:flex;justify-content:space-between;align-items:flex-start;padding:1.5rem 1.75rem;cursor:pointer;transition:background .2s;gap:1rem}
+.case-header:hover{background:rgba(10,10,10,.02)}
+.case-header-left{}
+.case-num{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:.4rem}
+.case-title{font-family:'DM Serif Display',serif;font-size:1.1rem;font-weight:400;line-height:1.2}
+.case-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:.5rem}
+.case-arrow{font-size:1.2rem;color:var(--mid);transition:transform .25s;flex-shrink:0;margin-top:2px}
+.case-item.open .case-arrow{transform:rotate(45deg)}
+.case-body{display:none;padding:0 1.75rem 1.75rem;border-top:0.5px solid var(--border)}
+.case-item.open .case-body{display:block}
+.case-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1.5rem;margin-top:1.5rem}
+.case-col-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:.75rem;padding-bottom:.5rem;border-bottom:0.5px solid var(--border)}
+.case-col-content{font-size:13px;color:var(--mid);line-height:1.6}
+.case-col-content ul{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+.case-col-content ul li{display:flex;gap:.5rem}
+.case-col-content ul li::before{content:'·';color:rgba(10,10,10,.3);flex-shrink:0}
+.case-outcome{font-size:13px;color:var(--black);line-height:1.6}
+.case-outcome li{display:flex;gap:.5rem;margin-bottom:.3rem}
+.case-outcome li::before{content:'✓';color:var(--accent);background:var(--black);width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0;margin-top:2px}
+.complexity-badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;padding:4px 10px;border-radius:100px;background:rgba(10,10,10,.06);color:rgba(10,10,10,.55);margin-right:4px;margin-top:.5rem}
+
+/* RECOGNITION */
 .recognition{background:var(--black);padding:5rem var(--pad)}
 .recognition .section-label{color:rgba(255,255,255,.3)}
 .recognition .section-label::after{background:rgba(255,255,255,.08)}
@@ -100,18 +118,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .rec-text{font-family:'DM Serif Display',serif;font-size:1.05rem;color:rgba(255,255,255,.85);line-height:1.45;margin-bottom:.5rem}
 .rec-year{font-size:11px;color:rgba(255,255,255,.25)}
 
-/* ── ABOUT ── */
+/* ABOUT */
 .about{padding:5rem var(--pad);display:grid;grid-template-columns:1fr 1fr;gap:4rem;border-bottom:0.5px solid var(--border)}
 .about-pov{font-family:'DM Serif Display',serif;font-size:clamp(1.4rem,2.5vw,2rem);line-height:1.3;font-weight:400}
 .about-pov em{font-style:italic;color:var(--mid)}
 .about-text{font-size:1rem;line-height:1.8;color:var(--mid)}
 .about-text strong{color:var(--black);font-weight:500}
 
-/* ── CONTACT BAR ── */
+/* CONTACT */
 .contact-bar{padding:1.25rem var(--pad);display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid var(--border)}
 .contact-bar span{font-size:11px;color:var(--mid)}
 
-/* ── PROJECT DETAIL ── */
+/* PROJECT DETAIL */
 .detail-hero{background:var(--black);padding:6rem var(--pad) 3rem;min-height:320px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
 .detail-hero::before{content:attr(data-initials);position:absolute;top:-30px;right:-20px;font-family:'DM Serif Display',serif;font-size:clamp(10rem,18vw,18rem);color:rgba(255,255,255,.04);line-height:1;pointer-events:none}
 .detail-back{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:2rem;cursor:pointer;background:none;border:none;transition:color .2s}
@@ -121,10 +139,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .detail-org{font-size:14px;color:rgba(255,255,255,.4)}
 .detail-body{display:grid;grid-template-columns:240px 1fr;gap:3rem;padding:3.5rem var(--pad);border-bottom:0.5px solid var(--border)}
 .detail-meta-col{display:flex;flex-direction:column;gap:1.5rem}
-.detail-meta-item{}
 .detail-meta-label{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);margin-bottom:.3rem}
 .detail-meta-value{font-size:13px;color:var(--black);line-height:1.5}
-.detail-content-col{}
 .detail-summary{font-size:1rem;line-height:1.8;color:var(--mid);margin-bottom:2rem}
 .detail-summary strong{color:var(--black);font-weight:500}
 .detail-bullets{list-style:none;display:flex;flex-direction:column;gap:.6rem}
@@ -137,7 +153,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 .detail-next-title{font-family:'DM Serif Display',serif;font-size:1.1rem;cursor:pointer;background:none;border:none;color:var(--black);transition:color .2s;text-align:left}
 .detail-next-title:hover{color:var(--mid)}
 
-/* ── RESPONSIVE ── */
+/* RESPONSIVE */
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;min-height:auto}
   .hero-right{min-height:260px}
@@ -146,15 +162,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
   .rec-grid{grid-template-columns:1fr}
   .chapter{grid-template-columns:80px 1fr;gap:1.5rem}
   .detail-body{grid-template-columns:1fr}
+  .case-grid{grid-template-columns:1fr 1fr}
   .nav-links{display:none}
   .hamburger{display:flex}
 }
 @media(max-width:600px){
   .cred-strip{grid-template-columns:1fr}
   .chapter{grid-template-columns:1fr}
+  .case-grid{grid-template-columns:1fr}
 }
 
-/* ── ANIMATIONS ── */
+/* ANIMATIONS */
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 .hero-left>*{animation:fadeUp .7s ease both}
 .hero-left>*:nth-child(1){animation-delay:.1s}
@@ -168,574 +186,656 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content
 <nav>
   <a class="nav-logo" data-showpage="home">Marco Bestonzo</a>
   <div class="nav-links">
-    <a data-goto="career">Career</a>
-    <a data-goto="recognition">Recognition</a>
-    <a data-goto="about">About</a>
-    <a data-goto="contact" class="nav-cta">Get in touch</a>
+    <a data-goto="career" data-en="Career" data-it="Carriera">Career</a>
+    <a data-goto="cases" data-en="Case Studies" data-it="Case Study">Case Studies</a>
+    <a data-goto="recognition" data-en="Recognition" data-it="Riconoscimenti">Recognition</a>
+    <a data-goto="about" data-en="About" data-it="Chi sono">About</a>
+    <a data-goto="contact" class="nav-cta" data-en="Get in touch" data-it="Contattami">Get in touch</a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('it')">IT</button>
+    </div>
   </div>
   <button class="hamburger" id="ham"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-nav" id="mobileNav">
-  <a data-goto="career" data-close="true">Career</a>
-  <a data-goto="recognition" data-close="true">Recognition</a>
-  <a data-goto="about" data-close="true">About</a>
-  <a data-goto="contact" data-close="true">Get in touch</a>
+  <a data-goto="career" data-close="true" data-en="Career" data-it="Carriera">Career</a>
+  <a data-goto="cases" data-close="true" data-en="Case Studies" data-it="Case Study">Case Studies</a>
+  <a data-goto="recognition" data-close="true" data-en="Recognition" data-it="Riconoscimenti">Recognition</a>
+  <a data-goto="about" data-close="true" data-en="About" data-it="Chi sono">About</a>
+  <a data-goto="contact" data-close="true" data-en="Get in touch" data-it="Contattami">Get in touch</a>
+  <div class="lang-toggle" style="width:fit-content">
+    <button class="lang-btn active" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('it')">IT</button>
+  </div>
 </div>
 
-<!-- ═══════════════════════════════════════ HOME ═══════════════════════════════════════ -->
+<!-- ════════════════════ HOME ════════════════════ -->
 <div class="page active" id="page-home">
 
   <section class="hero">
     <div class="hero-left">
-      <div class="hero-kicker">Head of B2C Product &amp; Venture Lead · BKN301</div>
+      <div class="hero-kicker" data-en="Head of B2C Product &amp; Venture Lead · BKN301" data-it="Head of B2C Product &amp; Venture Lead · BKN301">Head of B2C Product &amp; Venture Lead · BKN301</div>
       <h1 class="hero-h1">
-        I scale product ideas<br>
-        into <mark>scalable revenues.</mark><br>
-        <em>Engineer first.<br>Builder by nature.</em>
+        <span data-en="I scale product ideas<br>into <mark>scalable revenues.</mark><br><em>Engineer first.<br>Builder by nature.</em>" data-it="Trasformo idee di prodotto<br>in <mark>ricavi scalabili.</mark><br><em>Ingegnere prima di tutto.<br>Builder per natura.</em>">I scale product ideas<br>into <mark>scalable revenues.</mark><br><em>Engineer first.<br>Builder by nature.</em></span>
       </h1>
-      <p class="hero-desc">From building hardware at 17 to founding a global edtech startup, renewing a multinational's entire digital offering, and now leading a €30M fintech venture in MENA.</p>
+      <p class="hero-desc" data-en="From building hardware at 17 to founding a global edtech startup, renewing a multinational's entire digital offering, and now leading a €30M fintech venture in MENA." data-it="Dal costruire hardware a 17 anni alla fondazione di una startup edtech globale, al rinnovo dell'intero portafoglio digitale di una multinazionale, fino a guidare un venture fintech da €30M in MENA.">From building hardware at 17 to founding a global edtech startup, renewing a multinational's entire digital offering, and now leading a €30M fintech venture in MENA.</p>
     </div>
     <div class="hero-right">
       <div class="stats-grid">
-        <div class="stat"><div class="stat-n accent">€30M</div><div class="stat-l">Venture scale · BKN301</div></div>
-        <div class="stat"><div class="stat-n">4</div><div class="stat-l">Senior PMs led</div></div>
-        <div class="stat"><div class="stat-n">15+</div><div class="stat-l">AI team · Technogym</div></div>
-        <div class="stat"><div class="stat-n">20+</div><div class="stat-l">Years building products</div></div>
+        <div class="stat"><div class="stat-n accent">€30M</div><div class="stat-l" data-en="Venture scale · BKN301" data-it="Scala venture · BKN301">Venture scale · BKN301</div></div>
+        <div class="stat"><div class="stat-n">4</div><div class="stat-l" data-en="Senior PMs led" data-it="Senior PM guidati">Senior PMs led</div></div>
+        <div class="stat"><div class="stat-n">15+</div><div class="stat-l" data-en="AI team · Technogym" data-it="Team AI · Technogym">AI team · Technogym</div></div>
+        <div class="stat"><div class="stat-n">20+</div><div class="stat-l" data-en="Years building products" data-it="Anni a costruire prodotti">Years building products</div></div>
       </div>
     </div>
   </section>
 
   <div class="cred-strip">
     <div class="cred cred-accent">
-      <div class="cred-eyebrow">Current venture</div>
+      <div class="cred-eyebrow" data-en="Current venture" data-it="Venture attuale">Current venture</div>
       <div class="cred-val">€30M</div>
-      <div class="cred-src">BKN301 · MENA digital banking · 4 Senior PMs</div>
+      <div class="cred-src" data-en="BKN301 · MENA digital banking · 4 Senior PMs" data-it="BKN301 · Digital banking MENA · 4 Senior PM">BKN301 · MENA digital banking · 4 Senior PMs</div>
     </div>
     <div class="cred">
-      <div class="cred-eyebrow">Global recognition</div>
-      <div class="cred-val">Top 3 worldwide</div>
-      <div class="cred-src">The Economist · Best startup globally · 2014</div>
+      <div class="cred-eyebrow" data-en="Global recognition" data-it="Riconoscimento globale">Global recognition</div>
+      <div class="cred-val" data-en="Top 3 worldwide" data-it="Top 3 mondiale">Top 3 worldwide</div>
+      <div class="cred-src" data-en="The Economist · Best startup globally · 2014" data-it="The Economist · Migliore startup nel mondo · 2014">The Economist · Best startup globally · 2014</div>
     </div>
     <div class="cred">
-      <div class="cred-eyebrow">Research</div>
+      <div class="cred-eyebrow" data-en="Research" data-it="Ricerca">Research</div>
       <div class="cred-val">Karolinska</div>
-      <div class="cred-src">Nobel Prize university · Stockholm · 2011–12</div>
+      <div class="cred-src" data-en="Nobel Prize university · Stockholm · 2011–12" data-it="Università del Premio Nobel · Stoccolma · 2011–12">Nobel Prize university · Stockholm · 2011–12</div>
     </div>
     <div class="cred">
-      <div class="cred-eyebrow">EU Programme</div>
+      <div class="cred-eyebrow" data-en="EU Programme" data-it="Programma UE">EU Programme</div>
       <div class="cred-val">EC IMPACT</div>
-      <div class="cred-src">Selected startup · then invited as startup mentor</div>
+      <div class="cred-src" data-en="Selected startup · then invited as startup mentor" data-it="Startup selezionata · poi invitato come mentor">Selected startup · then invited as startup mentor</div>
     </div>
   </div>
 
+  <!-- CAREER -->
   <section class="career" id="career">
-    <div class="section-label">Career — most recent first</div>
+    <div class="section-label" data-en="Career — most recent first" data-it="Carriera — dal più recente">Career — most recent first</div>
 
     <div class="chapter">
-      <div class="ch-years"><span class="ch-now">2022 —<br>today</span></div>
+      <div class="ch-years"><span class="ch-now">2022 —<br><span data-en="today" data-it="oggi">today</span></span></div>
       <div>
-        <div class="ch-role">Head of B2C Product &amp; Venture Lead</div>
-        <div class="ch-company">BKN301 S.p.A. · MENA region · Fintech</div>
+        <div class="ch-role" data-en="Head of B2C Product &amp; Venture Lead" data-it="Head of B2C Product &amp; Venture Lead">Head of B2C Product &amp; Venture Lead</div>
+        <div class="ch-company">BKN301 S.p.A. · MENA · Fintech</div>
         <ul class="ch-bullets">
-          <li>Leading a €30M digital banking venture from inception — strategy, product roadmap, commercial model</li>
-          <li>Managing 4 Senior PMs across B2C product lines for the MENA market</li>
-          <li>Building a full digital banking stack from scratch in one of the world's fastest-growing fintech regions</li>
+          <li data-en="Leading a €30M digital banking venture from inception — strategy, product roadmap, commercial model" data-it="Guido un venture di digital banking da €30M dall'inizio — strategia, roadmap di prodotto, modello commerciale">Leading a €30M digital banking venture from inception — strategy, product roadmap, commercial model</li>
+          <li data-en="Managing 4 Senior PMs across B2C product lines for the MENA market" data-it="Gestione di 4 Senior PM su linee di prodotto B2C per il mercato MENA">Managing 4 Senior PMs across B2C product lines for the MENA market</li>
+          <li data-en="Building a full digital banking stack from scratch in one of the world's fastest-growing fintech regions" data-it="Costruzione di un'infrastruttura di digital banking completa da zero in una delle regioni fintech in più rapida crescita">Building a full digital banking stack from scratch in one of the world's fastest-growing fintech regions</li>
         </ul>
-        <div class="ch-tags">
-          <span class="tag tag-hl">€30M venture</span>
-          <span class="tag">Fintech</span><span class="tag">MENA</span><span class="tag">B2C product</span><span class="tag">Digital banking</span><span class="tag">Venture building</span>
-        </div>
-        <a class="ch-link" data-project="bkn">View project →</a>
+        <div class="ch-tags"><span class="tag tag-hl">€30M venture</span><span class="tag">Fintech</span><span class="tag">MENA</span><span class="tag">B2C</span><span class="tag">Digital banking</span></div>
+        <button class="ch-link" data-project="bkn" data-en="View project →" data-it="Vedi progetto →">View project →</button>
       </div>
     </div>
 
     <div class="chapter">
       <div class="ch-years">2016 —<br>2022</div>
       <div>
-        <div class="ch-role">Agile Tribe Lead → Program Manager</div>
-        <div class="ch-company">Technogym S.p.A. · Global fitness leader</div>
+        <div class="ch-role" data-en="Agile Tribe Lead → Program Manager" data-it="Agile Tribe Lead → Program Manager">Agile Tribe Lead → Program Manager</div>
+        <div class="ch-company">Technogym S.p.A. · Global</div>
         <ul class="ch-bullets">
-          <li>Renewed the entire digital product portfolio of a global fitness brand — full UI stack across all cardio lines</li>
-          <li>First European manufacturer to integrate Apple GymKit — featured in The Verge and AppleInsider</li>
-          <li>Delivered Samsung Galaxy Watch Active, IBM Watson Virtual Coach, Skillrun TX, Artis Line, 2020 Display portfolio</li>
-          <li>Led 15+ person AI-driven customer insight team as Program Manager in final year</li>
+          <li data-en="Renewed the entire digital product portfolio of a global fitness brand — full UI stack across all cardio lines" data-it="Rinnovato l'intero portafoglio digitale di un brand fitness globale — stack UI completo su tutte le linee cardio">Renewed the entire digital product portfolio of a global fitness brand — full UI stack across all cardio lines</li>
+          <li data-en="First European manufacturer to integrate Apple GymKit — featured in The Verge and AppleInsider" data-it="Primo produttore europeo a integrare Apple GymKit — citato su The Verge e AppleInsider">First European manufacturer to integrate Apple GymKit — featured in The Verge and AppleInsider</li>
+          <li data-en="Delivered Samsung Galaxy Watch Active, IBM Watson Virtual Coach, Skillrun TX, Artis Line, 2020 Display portfolio" data-it="Consegnato Samsung Galaxy Watch Active, IBM Watson Virtual Coach, Skillrun TX, Artis Line, portfolio 2020">Delivered Samsung Galaxy Watch Active, IBM Watson Virtual Coach, Skillrun TX, Artis Line, 2020 Display portfolio</li>
+          <li data-en="Led 15+ person AI-driven customer insight team as Program Manager" data-it="Guidato team di 15+ persone su AI customer insight come Program Manager">Led 15+ person AI-driven customer insight team as Program Manager</li>
         </ul>
-        <div class="ch-tags">
-          <span class="tag tag-brand">Apple GymKit</span><span class="tag tag-brand">Samsung Galaxy Watch</span><span class="tag tag-brand">IBM Watson AI</span>
-          <span class="tag">Agile tribe</span><span class="tag">15+ team</span><span class="tag">Full UI renewal</span>
-        </div>
-        <a class="ch-link" data-project="tg2020">View Technogym work →</a>
+        <div class="ch-tags"><span class="tag tag-brand">Apple GymKit</span><span class="tag tag-brand">Samsung</span><span class="tag tag-brand">IBM Watson AI</span><span class="tag">Tribe lead</span><span class="tag">15+ team</span></div>
+        <button class="ch-link" data-project="tg2020" data-en="View Technogym work →" data-it="Vedi lavoro Technogym →">View Technogym work →</button>
       </div>
     </div>
 
     <div class="chapter">
       <div class="ch-years">2016 —<br>2017</div>
       <div>
-        <div class="ch-role">Startup Mentor</div>
-        <div class="ch-company">European Commission · IMPACT Accelerator Programme</div>
+        <div class="ch-role" data-en="Startup Mentor" data-it="Mentor per Startup">Startup Mentor</div>
+        <div class="ch-company" data-en="European Commission · IMPACT Accelerator" data-it="Commissione Europea · Acceleratore IMPACT">European Commission · IMPACT Accelerator</div>
         <ul class="ch-bullets">
-          <li>Selected as mentor for EU's flagship deep-tech startup accelerator after INTOINO's own selection</li>
-          <li>Mentored early-stage founders on product-market fit, fundraising and go-to-market strategy</li>
+          <li data-en="Selected as mentor for EU's flagship deep-tech startup accelerator after INTOINO's own selection" data-it="Selezionato come mentor per l'acceleratore deep-tech della CE dopo la selezione di INTOINO">Selected as mentor for EU's flagship deep-tech startup accelerator after INTOINO's own selection</li>
+          <li data-en="Mentored early-stage founders on product-market fit, fundraising and go-to-market strategy" data-it="Mentorship a fondatori early-stage su product-market fit, fundraising e go-to-market">Mentored early-stage founders on product-market fit, fundraising and go-to-market strategy</li>
         </ul>
-        <div class="ch-tags">
-          <span class="tag tag-hl">EC IMPACT mentor</span><span class="tag">Startup advisory</span><span class="tag">Deep tech</span>
-        </div>
+        <div class="ch-tags"><span class="tag tag-hl">EC IMPACT mentor</span><span class="tag">Startup advisory</span></div>
       </div>
     </div>
 
     <div class="chapter">
       <div class="ch-years">2012 —<br>2016</div>
       <div>
-        <div class="ch-role">CEO &amp; Co-founder</div>
-        <div class="ch-company">INTOINO S.r.l. · IoT Edtech Startup</div>
+        <div class="ch-role" data-en="CEO &amp; Co-founder" data-it="CEO &amp; Co-fondatore">CEO &amp; Co-founder</div>
+        <div class="ch-company">INTOINO S.r.l. · IoT Edtech</div>
         <ul class="ch-bullets">
-          <li>Built from zero: hardware design, software platform, go-to-market, fundraising — €0.5M raised</li>
-          <li>Selected Top 3 startup worldwide by The Economist (2014) · 15+ international awards</li>
-          <li>Selected by European Commission IMPACT Accelerator · later invited back as EC IMPACT startup mentor</li>
+          <li data-en="Built from zero: hardware design, software platform, go-to-market, fundraising — €0.5M raised" data-it="Costruito da zero: design hardware, piattaforma software, go-to-market, fundraising — €0.5M raccolti">Built from zero: hardware design, software platform, go-to-market, fundraising — €0.5M raised</li>
+          <li data-en="Selected Top 3 startup worldwide by The Economist (2014) · 15+ international awards" data-it="Selezionato Top 3 startup mondiale da The Economist (2014) · 15+ premi internazionali">Selected Top 3 startup worldwide by The Economist (2014) · 15+ international awards</li>
+          <li data-en="Selected by European Commission IMPACT Accelerator" data-it="Selezionato dall'Acceleratore IMPACT della Commissione Europea">Selected by European Commission IMPACT Accelerator</li>
         </ul>
-        <div class="ch-tags">
-          <span class="tag tag-hl">Top 3 The Economist</span><span class="tag tag-hl">EC IMPACT</span>
-          <span class="tag">Founder</span><span class="tag">IoT hardware</span><span class="tag">Edtech</span><span class="tag">€0.5M raised</span>
-        </div>
-        <a class="ch-link" data-project="intoino">View project →</a>
+        <div class="ch-tags"><span class="tag tag-hl">Top 3 The Economist</span><span class="tag tag-hl">EC IMPACT</span><span class="tag">Founder</span><span class="tag">IoT</span><span class="tag">€0.5M raised</span></div>
+        <button class="ch-link" data-project="intoino" data-en="View project →" data-it="Vedi progetto →">View project →</button>
       </div>
     </div>
 
     <div class="chapter">
       <div class="ch-years">2011 —<br>2012</div>
       <div>
-        <div class="ch-role">Assistant Researcher</div>
-        <div class="ch-company">Karolinska Institutet · Stockholm, Sweden</div>
+        <div class="ch-role" data-en="Assistant Researcher" data-it="Ricercatore Assistente">Assistant Researcher</div>
+        <div class="ch-company" data-en="Karolinska Institutet · Stockholm" data-it="Karolinska Institutet · Stoccolma">Karolinska Institutet · Stockholm</div>
         <ul class="ch-bullets">
-          <li>Research in bioentrepreneurship &amp; innovation at the Nobel Prize university, sponsored by CRT Foundation</li>
-          <li>Attended live pitch sessions by Niklas Zennström (Skype co-founder, Atomico) and Andreas Ehn (first Spotify CTO)</li>
-          <li>Dropped PhD at IIT Turin to take this position — a decision that shaped the entrepreneur path that followed</li>
+          <li data-en="Research in bioentrepreneurship &amp; innovation at the Nobel Prize university · CRT Foundation grant" data-it="Ricerca in bioentrepreneurship e innovazione all'università del Premio Nobel · borsa CRT Foundation">Research in bioentrepreneurship &amp; innovation at the Nobel Prize university · CRT Foundation grant</li>
+          <li data-en="Attended live pitch sessions by Niklas Zennström (Skype, Atomico) and Andreas Ehn (first Spotify CTO)" data-it="Partecipato a sessioni live di Niklas Zennström (Skype, Atomico) e Andreas Ehn (primo CTO di Spotify)">Attended live pitch sessions by Niklas Zennström (Skype, Atomico) and Andreas Ehn (first Spotify CTO)</li>
         </ul>
-        <div class="ch-tags">
-          <span class="tag tag-brand">Karolinska Institutet</span><span class="tag">Bioentrepreneurship</span><span class="tag">Research</span>
-        </div>
-        <a class="ch-link" data-project="ki">View project →</a>
+        <div class="ch-tags"><span class="tag tag-brand">Karolinska</span><span class="tag">Bioentrepreneurship</span></div>
+        <button class="ch-link" data-project="ki" data-en="View project →" data-it="Vedi progetto →">View project →</button>
       </div>
     </div>
 
     <div class="chapter">
       <div class="ch-years">2002 —<br>2011</div>
       <div>
-        <div class="ch-role">Engineer &amp; Maker</div>
+        <div class="ch-role" data-en="Engineer &amp; Maker" data-it="Ingegnere &amp; Maker">Engineer &amp; Maker</div>
         <div class="ch-company">Politecnico di Torino · IIT · LISiN</div>
         <ul class="ch-bullets">
-          <li>Biomedical engineering degree · Designed and built a portable EMG device at 17 at LISiN Turin</li>
-          <li>PhD candidate at Italian Institute of Technology (IIT) — dropped to pursue Karolinska opportunity</li>
-          <li>First code at 13 — Snake and roulette simulator in Turbo Pascal</li>
+          <li data-en="Biomedical engineering degree · EMG device design at 17 at LISiN Turin" data-it="Laurea in ingegneria biomedica · Progettazione dispositivo EMG a 17 anni al LISiN Torino">Biomedical engineering degree · EMG device design at 17 at LISiN Turin</li>
+          <li data-en="PhD candidate at Italian Institute of Technology (IIT) — dropped for Karolinska opportunity" data-it="Dottorando all'Istituto Italiano di Tecnologia (IIT) — lasciato per l'opportunità a Karolinska">PhD candidate at Italian Institute of Technology (IIT) — dropped for Karolinska opportunity</li>
+          <li data-en="First code at 13 — Snake and roulette simulator in Turbo Pascal" data-it="Primo codice a 13 anni — Snake e simulatore di roulette in Turbo Pascal">First code at 13 — Snake and roulette simulator in Turbo Pascal</li>
         </ul>
-        <div class="ch-tags">
-          <span class="tag tag-brand">IIT Turin</span><span class="tag">Biomedical engineering</span><span class="tag">Hardware</span><span class="tag">EMG device</span>
+        <div class="ch-tags"><span class="tag tag-brand">IIT Turin</span><span class="tag">Biomedical engineering</span><span class="tag">Hardware</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section class="cases" id="cases">
+    <div class="section-label" data-en="Case studies" data-it="Case study">Case studies</div>
+
+    <!-- CASE 1 -->
+    <div class="case-item" id="case1">
+      <div class="case-header" onclick="toggleCase('case1')">
+        <div class="case-header-left">
+          <div class="case-num" data-en="Case 01 · Fintech · GCC" data-it="Case 01 · Fintech · GCC">Case 01 · Fintech · GCC</div>
+          <div class="case-title" data-en="Launching a Digital Bank in a Regulated GCC Market" data-it="Lancio di una Banca Digitale in un Mercato GCC Regolamentato">Launching a Digital Bank in a Regulated GCC Market</div>
+          <div class="case-tags">
+            <span class="complexity-badge" data-en="Regulated environment" data-it="Ambiente regolamentato">Regulated environment</span>
+            <span class="complexity-badge" data-en="Multi-vendor architecture" data-it="Architettura multi-vendor">Multi-vendor architecture</span>
+            <span class="complexity-badge" data-en="High strategic visibility" data-it="Alta visibilità strategica">High strategic visibility</span>
+          </div>
+        </div>
+        <div class="case-arrow">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-grid">
+          <div>
+            <div class="case-col-label" data-en="Context" data-it="Contesto">Context</div>
+            <div class="case-col-content" data-en="Led product design for a greenfield digital bank initiative in the GCC under a regulated framework — building a new banking product from zero in a complex, multi-stakeholder environment." data-it="Guidato il design di prodotto per un'iniziativa di digital bank greenfield nel GCC sotto un framework regolamentato — costruendo un nuovo prodotto bancario da zero in un ambiente complesso e multi-stakeholder.">Led product design for a greenfield digital bank initiative in the GCC under a regulated framework — building a new banking product from zero in a complex, multi-stakeholder environment.</div>
+          </div>
+          <div>
+            <div class="case-col-label" data-en="Problem" data-it="Problema">Problem</div>
+            <div class="case-col-content"><ul>
+              <li data-en="No existing infrastructure" data-it="Nessuna infrastruttura esistente">No existing infrastructure</li>
+              <li data-en="Strong regulatory constraints" data-it="Forti vincoli regolatori">Strong regulatory constraints</li>
+              <li data-en="Multi-vendor ecosystem required" data-it="Ecosistema multi-vendor richiesto">Multi-vendor ecosystem required</li>
+              <li data-en="Fast time-to-market pressure" data-it="Pressione su time-to-market rapido">Fast time-to-market pressure</li>
+            </ul></div>
+          </div>
+          <div>
+            <div class="case-col-label" data-en="What I did" data-it="Cosa ho fatto">What I did</div>
+            <div class="case-col-content"><ul>
+              <li data-en="Defined modular product architecture based on orchestration principles" data-it="Definita architettura di prodotto modulare basata su principi di orchestrazione">Defined modular product architecture based on orchestration principles</li>
+              <li data-en="Structured integration strategy across core banking, issuing, onboarding and compliance providers" data-it="Strutturata strategia di integrazione su core banking, issuing, onboarding e compliance">Structured integration strategy across core banking, issuing, onboarding and compliance providers</li>
+              <li data-en="Led product scope across accounts, cards and onboarding" data-it="Guidato il perimetro di prodotto su conti, carte e onboarding">Led product scope across accounts, cards and onboarding</li>
+              <li data-en="Coordinated cross-functional and cross-border stakeholders" data-it="Coordinato stakeholder cross-funzionali e internazionali">Coordinated cross-functional and cross-border stakeholders</li>
+            </ul></div>
+          </div>
+          <div>
+            <div class="case-col-label" data-en="Outcome" data-it="Risultato">Outcome</div>
+            <div class="case-col-content"><ul class="case-outcome">
+              <li data-en="End-to-end platform design ready for regulatory submission" data-it="Design della piattaforma end-to-end pronto per la submission regolatoria">End-to-end platform design ready for regulatory submission</li>
+              <li data-en="Reduced integration complexity through orchestration layer" data-it="Ridotta complessità di integrazione tramite layer di orchestrazione">Reduced integration complexity through orchestration layer</li>
+              <li data-en="Scalable foundation for future product growth" data-it="Fondamenta scalabili per la crescita futura del prodotto">Scalable foundation for future product growth</li>
+            </ul></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 2 -->
+    <div class="case-item" id="case2">
+      <div class="case-header" onclick="toggleCase('case2')">
+        <div class="case-header-left">
+          <div class="case-num" data-en="Case 02 · Platform · Fintech" data-it="Case 02 · Platform · Fintech">Case 02 · Platform · Fintech</div>
+          <div class="case-title" data-en="Building a Financial Services Orchestrator Platform" data-it="Costruzione di una Piattaforma di Orchestrazione di Servizi Finanziari">Building a Financial Services Orchestrator Platform</div>
+          <div class="case-tags">
+            <span class="complexity-badge" data-en="Multi-client platform" data-it="Piattaforma multi-client">Multi-client platform</span>
+            <span class="complexity-badge" data-en="High transaction volumes" data-it="Alti volumi transazionali">High transaction volumes</span>
+            <span class="complexity-badge" data-en="Vendor-agnostic design" data-it="Design vendor-agnostic">Vendor-agnostic design</span>
+          </div>
+        </div>
+        <div class="case-arrow">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-grid">
+          <div>
+            <div class="case-col-label" data-en="Context" data-it="Contesto">Context</div>
+            <div class="case-col-content" data-en="Development of a modular platform enabling financial institutions to launch digital banking services through third-party integrations — designed to be vendor-agnostic and scalable across markets." data-it="Sviluppo di una piattaforma modulare che permette a istituzioni finanziarie di lanciare servizi di digital banking tramite integrazioni di terze parti — progettata per essere vendor-agnostic e scalabile su più mercati.">Development of a modular platform enabling financial institutions to launch digital banking services through third-party integrations — designed to be vendor-agnostic and scalable across markets.</div>
+          </div>
+          <div>
+            <div class="case-col-label" data-en="Problem" data-it="Problema">Problem</div>
+            <div class="case-col-content"><ul>
+              <li data-en="Fragmented vendor landscape" data-it="Paesaggio vendor frammentato">Fragmented vendor landscape</li>
+              <li data-en="High integration costs" data-it="Alti costi di integrazione">High integration costs</li>
+              <li data-en="Limited scalability across markets" data-it="Scalabilità limitata su più mercati">Limited scalability across markets</li>
+            </ul></div>
+          </div>
+          <div>
+            <div class="case-col-label" data-en="What I did" data-it="Cosa ho fatto">What I did</div>
+            <div class="case-col-content"><ul>
+              <li data-en="Designed modular product architecture for orchestrating financial services" data-it="Progettata architettura di prodotto modulare per l'orchestrazione di servizi finanziari">Designed modular product architecture for orchestrating financial services</li>
+              <li data-en="Defined integration patterns across multiple providers" data-it="Definiti pattern di integrazione su più provider">Defined integration patterns across multiple providers</li>
+              <li data-en="Led roadmap for key platform capabilities" data-it="Guidata la roadmap per le funzionalità chiave della piattaforma">Led roadmap for key platform capabilities</li>
+              <li data-en="Translated client and market requirements into scalable features" data-it="Tradotto requisiti di clienti e mercato in feature scalabili">Translated client and market requirements into scalable features</li>
+            </ul></div>
+          </div>
+          <div>
+            <div class="case-col-label" data-en="Outcome" data-it="Risultato">Outcome</div>
+            <div class="case-col-content"><ul class="case-outcome">
+              <li data-en="Reduced time-to-market for new implementations" data-it="Ridotto il time-to-market per nuove implementazioni">Reduced time-to-market for new implementations</li>
+              <li data-en="Standardized integration approach across clients" data-it="Approccio di integrazione standardizzato su tutti i clienti">Standardized integration approach across clients</li>
+              <li data-en="Increased platform flexibility across markets" data-it="Aumentata la flessibilità della piattaforma su più mercati">Increased platform flexibility across markets</li>
+            </ul></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CASE 3 -->
+    <div class="case-item" id="case3">
+      <div class="case-header" onclick="toggleCase('case3')">
+        <div class="case-header-left">
+          <div class="case-num" data-en="Case 03 · Scale · Global" data-it="Case 03 · Scale · Global">Case 03 · Scale · Global</div>
+          <div class="case-title" data-en="Scaling Customer Platforms in a Global Environment" data-it="Scalare Piattaforme Cliente in un Contesto Globale">Scaling Customer Platforms in a Global Environment</div>
+          <div class="case-tags">
+            <span class="complexity-badge" data-en="Multi-market" data-it="Multi-mercato">Multi-market</span>
+            <span class="complexity-badge" data-en="Cross-functional alignment" data-it="Allineamento cross-funzionale">Cross-functional alignment</span>
+            <span class="complexity-badge" data-en="Hybrid B2C/B2B2C" data-it="Ibrido B2C/B2B2C">Hybrid B2C/B2B2C</span>
+          </div>
+        </div>
+        <div class="case-arrow">+</div>
+      </div>
+      <div class="case-body">
+        <div class="case-grid">
+          <div>
+            <div class="case-col-label" data-en="Context" data-it="Contesto">Context</div>
+            <div class="case-col-content" data-en="Led product initiatives focused on customer lifecycle and digital experience across international markets — balancing B2C and B2B2C dynamics in a global fitness brand context." data-it="Guidato iniziative di prodotto focalizzate sul ciclo di vita del cliente e l'esperienza digitale su mercati internazionali — bilanciando dinamiche B2C e B2B2C nel contesto di un brand fitness globale.">Led product initiatives focused on customer lifecycle and digital experience across international markets — balancing B2C and B2B2C dynamics in a global fitness brand context.</div>
+          </div>
+          <div>
+            <div class="case-col-label" data-en="Problem" data-it="Problema">Problem</div>
+            <div class="case-col-content"><ul>
+              <li data-en="Fragmented customer experience across touchpoints" data-it="Esperienza cliente frammentata sui touchpoint">Fragmented customer experience across touchpoints</li>
+              <li data-en="Limited data-driven product insights" data-it="Insight di prodotto data-driven limitati">Limited data-driven product insights</li>
+              <li data-en="Need for scalable digital services" data-it="Necessità di servizi digitali scalabili">Need for scalable digital services</li>
+            </ul></div>
+          </div>
+          <div>
+            <div class="case-col-label" data-en="What I did" data-it="Cosa ho fatto">What I did</div>
+            <div class="case-col-content"><ul>
+              <li data-en="Led product improvements across onboarding and engagement" data-it="Guidati miglioramenti di prodotto su onboarding e engagement">Led product improvements across onboarding and engagement</li>
+              <li data-en="Coordinated global research initiatives" data-it="Coordinate iniziative di ricerca globali">Coordinated global research initiatives</li>
+              <li data-en="Translated insights into product enhancements" data-it="Tradotti insight in miglioramenti di prodotto">Translated insights into product enhancements</li>
+              <li data-en="Aligned cross-functional teams across markets" data-it="Allineati team cross-funzionali su più mercati">Aligned cross-functional teams across markets</li>
+            </ul></div>
+          </div>
+          <div>
+            <div class="case-col-label" data-en="Outcome" data-it="Risultato">Outcome</div>
+            <div class="case-col-content"><ul class="case-outcome">
+              <li data-en="Improved customer engagement and retention" data-it="Migliorati engagement e retention dei clienti">Improved customer engagement and retention</li>
+              <li data-en="Enabled data-driven product decisions at scale" data-it="Abilitate decisioni di prodotto data-driven su larga scala">Enabled data-driven product decisions at scale</li>
+              <li data-en="Supported global scalability of digital services" data-it="Supportata la scalabilità globale dei servizi digitali">Supported global scalability of digital services</li>
+            </ul></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- RECOGNITION -->
   <section class="recognition" id="recognition">
-    <div class="section-label">Recognition</div>
+    <div class="section-label" data-en="Recognition" data-it="Riconoscimenti">Recognition</div>
     <div class="rec-grid">
       <div class="rec-item">
         <div class="rec-source">The Economist · 2014</div>
-        <div class="rec-text">Top 3 startup worldwide — INTOINO selected among the best globally</div>
-        <div class="rec-year">World · Startup competition</div>
+        <div class="rec-text" data-en="Top 3 startup worldwide — INTOINO selected among the best globally" data-it="Top 3 startup mondiale — INTOINO selezionata tra le migliori al mondo">Top 3 startup worldwide — INTOINO selected among the best globally</div>
+        <div class="rec-year" data-en="World · Startup competition" data-it="Mondo · Competizione startup">World · Startup competition</div>
       </div>
       <div class="rec-item">
-        <div class="rec-source">European Commission</div>
-        <div class="rec-text">IMPACT Accelerator — selected as startup, then invited back as programme mentor</div>
+        <div class="rec-source" data-en="European Commission" data-it="Commissione Europea">European Commission</div>
+        <div class="rec-text" data-en="IMPACT Accelerator — selected as startup, then invited back as programme mentor" data-it="Acceleratore IMPACT — selezionato come startup, poi invitato come mentor del programma">IMPACT Accelerator — selected as startup, then invited back as programme mentor</div>
         <div class="rec-year">2013 · 2016</div>
       </div>
       <div class="rec-item">
         <div class="rec-source">Karolinska Institutet</div>
-        <div class="rec-text">Research position at the Nobel Prize university — sponsored by CRT Foundation</div>
-        <div class="rec-year">Stockholm · 2011–2012</div>
+        <div class="rec-text" data-en="Research position at the Nobel Prize university — sponsored by CRT Foundation" data-it="Posizione di ricerca all'università del Premio Nobel — sponsorizzato dalla CRT Foundation">Research position at the Nobel Prize university — sponsored by CRT Foundation</div>
+        <div class="rec-year" data-en="Stockholm · 2011–2012" data-it="Stoccolma · 2011–2012">Stockholm · 2011–2012</div>
       </div>
     </div>
   </section>
 
+  <!-- ABOUT -->
   <section class="about" id="about">
     <div>
-      <div class="section-label">Point of view</div>
+      <div class="section-label" data-en="Point of view" data-it="Punto di vista">Point of view</div>
       <div class="about-pov">
-        Scaling product and service ideas<br>
-        into <em>scalable revenues</em> —<br>
-        from first line of code<br>
-        to €30M ventures.<br><br>
-        <span style="font-size:clamp(1rem,1.6vw,1.3rem);color:var(--mid)">Builder by nature —<br><em>in product and in metal.</em></span>
+        <span data-en="Scaling product and service ideas<br>into <em>scalable revenues</em> —<br>from first line of code<br>to €30M ventures.<br><br>" data-it="Trasformo idee di prodotto e servizio<br>in <em>ricavi scalabili</em> —<br>dalla prima riga di codice<br>a venture da €30M.<br><br>">Scaling product and service ideas<br>into <em>scalable revenues</em> —<br>from first line of code<br>to €30M ventures.<br><br></span>
+        <span style="font-size:clamp(1rem,1.6vw,1.3rem);color:var(--mid)" data-en="Builder by nature —<br><em>in product and in metal.</em>" data-it="Builder per natura —<br><em>nel prodotto e nel metallo.</em>">Builder by nature —<br><em>in product and in metal.</em></span>
       </div>
     </div>
     <div>
-      <div class="section-label">Background</div>
-      <p class="about-text">
-        I started coding at 13 and built my first medical device at 17. That maker instinct never left — it just scaled up.
-        <strong>At Karolinska</strong> I researched bioentrepreneurship alongside Niklas Zennström and Andreas Ehn.
-        <strong>With INTOINO</strong> I raised €0.5M, won 15+ international awards, and was named Top 3 startup worldwide by The Economist.<br><br>
-        At <strong>Technogym</strong> I led the renewal of an entire multinational's digital offering as Agile Tribe Lead —
-        delivering Apple GymKit, Samsung Galaxy Watch and IBM Watson integrations, then led a 15+ AI team.
-        At <strong>BKN301</strong> I now lead a €30M digital banking venture in MENA, managing 4 Senior PMs and building a full B2C product stack from scratch.<br><br>
-        When I'm not building products, I restore vintage vans from scratch — same process, different materials. It keeps the builder honest.
-      </p>
+      <div class="section-label" data-en="Background" data-it="Background">Background</div>
+      <p class="about-text" data-en="I started coding at 13 and built my first medical device at 17. That maker instinct never left — it just scaled up. <strong>At Karolinska</strong> I researched bioentrepreneurship alongside Niklas Zennström and Andreas Ehn. <strong>With INTOINO</strong> I raised €0.5M, won 15+ international awards, and was named Top 3 startup worldwide by The Economist.<br><br>At <strong>Technogym</strong> I led the renewal of an entire multinational's digital offering as Agile Tribe Lead — delivering Apple GymKit, Samsung Galaxy Watch and IBM Watson integrations, then led a 15+ AI team. At <strong>BKN301</strong> I now lead a €30M digital banking venture in MENA, managing 4 Senior PMs and building a full B2C product stack from scratch.<br><br>When I'm not building products, I restore vintage vans from scratch — same process, different materials. It keeps the builder honest." data-it="Ho iniziato a programmare a 13 anni e ho costruito il mio primo dispositivo medico a 17. Quell'istinto da maker non se n'è mai andato — è solo scalato. <strong>A Karolinska</strong> ho ricercato il bioentrepreneurship accanto a Niklas Zennström e Andreas Ehn. <strong>Con INTOINO</strong> ho raccolto €0.5M, vinto 15+ premi internazionali, e sono stato nominato Top 3 startup mondiale da The Economist.<br><br>In <strong>Technogym</strong> ho guidato il rinnovo dell'intero portafoglio digitale di una multinazionale come Agile Tribe Lead — consegnando le integrazioni Apple GymKit, Samsung Galaxy Watch e IBM Watson, poi guidando un team AI di 15+. In <strong>BKN301</strong> guido un venture di digital banking da €30M in MENA, gestendo 4 Senior PM e costruendo uno stack B2C completo da zero.<br><br>Quando non costruisco prodotti, restauro van vintage da zero — stesso processo, materiali diversi. Ti mantiene onesto come builder.">I started coding at 13 and built my first medical device at 17. That maker instinct never left — it just scaled up. <strong>At Karolinska</strong> I researched bioentrepreneurship alongside Niklas Zennström and Andreas Ehn. <strong>With INTOINO</strong> I raised €0.5M, won 15+ international awards, and was named Top 3 startup worldwide by The Economist.<br><br>At <strong>Technogym</strong> I led the renewal of an entire multinational's digital offering as Agile Tribe Lead — delivering Apple GymKit, Samsung Galaxy Watch and IBM Watson integrations, then led a 15+ AI team. At <strong>BKN301</strong> I now lead a €30M digital banking venture in MENA, managing 4 Senior PMs and building a full B2C product stack from scratch.<br><br>When I'm not building products, I restore vintage vans from scratch — same process, different materials. It keeps the builder honest.</p>
     </div>
   </section>
 
   <div class="contact-bar" id="contact">
     <span>marcobestonzo.com</span>
-    <span style="color:var(--black);font-weight:500;font-size:13px;">Available for C-suite · Head of Product · Venture Lead roles</span>
+    <span style="color:var(--black);font-weight:500;font-size:13px;" data-en="Available for C-suite · Head of Product · Venture Lead roles" data-it="Disponibile per ruoli C-suite · Head of Product · Venture Lead">Available for C-suite · Head of Product · Venture Lead roles</span>
     <span>© 2025 · San Marino</span>
   </div>
-
 </div><!-- end page-home -->
 
 
-<!-- ═══════════════════════════════════════ BKN301 ═══════════════════════════════════════ -->
+<!-- ════════════════════ PROJECT PAGES (same as before) ════════════════════ -->
+
 <div class="page" id="page-bkn">
   <div class="detail-hero" data-initials="BK">
-    <button class="detail-back" data-showpage="home">← Back to overview</button>
+    <button class="detail-back" data-showpage="home">← Back</button>
     <div class="detail-tag">2022 — today · Fintech · MENA</div>
     <h1 class="detail-title">BKN301 — €30M MENA Digital Banking Venture</h1>
     <div class="detail-org">Head of B2C Product &amp; Venture Lead · BKN301 S.p.A.</div>
   </div>
   <div class="detail-body">
     <div class="detail-meta-col">
-      <div class="detail-meta-item"><div class="detail-meta-label">Role</div><div class="detail-meta-value">Head of B2C Product &amp; Venture Lead</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Period</div><div class="detail-meta-value">September 2022 — present</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Scale</div><div class="detail-meta-value">€30M venture · MENA region</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Team</div><div class="detail-meta-value">4 Senior PMs</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">URL</div><div class="detail-meta-value">bkn301.com</div></div>
+      <div><div class="detail-meta-label">Role</div><div class="detail-meta-value">Head of B2C Product &amp; Venture Lead</div></div>
+      <div><div class="detail-meta-label">Period</div><div class="detail-meta-value">September 2022 — present</div></div>
+      <div><div class="detail-meta-label">Scale</div><div class="detail-meta-value">€30M · MENA region</div></div>
+      <div><div class="detail-meta-label">Team</div><div class="detail-meta-value">4 Senior PMs</div></div>
     </div>
-    <div class="detail-content-col">
-      <p class="detail-summary">Leading a €30M digital banking venture from inception in the MENA region as Head of B2C Product and Venture Lead at BKN301 S.p.A. Built the full product strategy, team structure and B2C offering from scratch in one of the world's fastest-growing fintech markets.</p>
+    <div>
+      <p class="detail-summary">Leading a €30M digital banking venture from inception in the MENA region. Built the full product strategy, team structure and B2C offering from scratch in one of the world's fastest-growing fintech markets.</p>
       <ul class="detail-bullets">
-        <li><strong>Venture leadership</strong> — end-to-end ownership of a €30M digital banking initiative from strategy to execution</li>
+        <li><strong>Venture leadership</strong> — end-to-end ownership from strategy to execution</li>
         <li><strong>Team building</strong> — recruited and managing 4 Senior PMs across B2C product lines</li>
-        <li><strong>Product strategy</strong> — defining product vision, roadmap and commercial model for MENA digital banking users</li>
-        <li><strong>Full stack from zero</strong> — building digital banking infrastructure, UX, and go-to-market from the ground up</li>
-        <li><strong>Market focus</strong> — navigating the regulatory, cultural and competitive landscape of the MENA fintech sector</li>
+        <li><strong>Product strategy</strong> — defining product vision, roadmap and commercial model for MENA users</li>
+        <li><strong>Full stack from zero</strong> — building digital banking infrastructure and UX from the ground up</li>
       </ul>
     </div>
   </div>
-  <div class="detail-next">
-    <div>
-      <div class="detail-next-label">Next project</div>
-      <button class="detail-next-title" data-project="tg2020">Technogym 2020 Display Portfolio →</button>
-    </div>
-  </div>
+  <div class="detail-next"><div><div class="detail-next-label">Next</div><button class="detail-next-title" data-project="tg2020">Technogym 2020 Display Portfolio →</button></div></div>
   <div class="contact-bar"><span>marcobestonzo.com</span><span>© 2025</span></div>
 </div>
 
-
-<!-- ═══════════════════════════════════════ TECHNOGYM 2020 ═══════════════════════════════════════ -->
 <div class="page" id="page-tg2020">
   <div class="detail-hero" data-initials="TG">
-    <button class="detail-back" data-showpage="home">← Back to overview</button>
+    <button class="detail-back" data-showpage="home">← Back</button>
     <div class="detail-tag">2018–2020 · Digital Product · Technogym</div>
     <h1 class="detail-title">Technogym 2020 Display Portfolio</h1>
     <div class="detail-org">Digital Product Manager · Technogym S.p.A.</div>
   </div>
   <div class="detail-body">
     <div class="detail-meta-col">
-      <div class="detail-meta-item"><div class="detail-meta-label">Role</div><div class="detail-meta-value">Digital Product Manager</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Period</div><div class="detail-meta-value">2018 – July 2020</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">For</div><div class="detail-meta-value">Technogym S.p.A.</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">URL</div><div class="detail-meta-value">technogym.com/int/technogym-live</div></div>
+      <div><div class="detail-meta-label">Role</div><div class="detail-meta-value">Digital Product Manager</div></div>
+      <div><div class="detail-meta-label">Period</div><div class="detail-meta-value">2018 – July 2020</div></div>
+      <div><div class="detail-meta-label">For</div><div class="detail-meta-value">Technogym S.p.A.</div></div>
     </div>
-    <div class="detail-content-col">
-      <p class="detail-summary">Managed and launched the new 2020 cardio product interfaces portfolio on the Technogym Excite line. Influenced chairmanship, management, marketing, design, R&amp;D and testing during the full product lifecycle — from conceptualization and market research through UX design and development with continuous usability and human-centred focus.</p>
+    <div>
+      <p class="detail-summary">Managed and launched the new 2020 cardio product interfaces portfolio on the Technogym Excite line. Led the full product lifecycle from conceptualization through market research, UX design and launch with continuous human-centred focus.</p>
       <ul class="detail-bullets">
-        <li><strong>Full lifecycle ownership</strong> — from market research and concept to launch in July 2020</li>
-        <li><strong>Cross-functional influence</strong> — drove alignment across chairmanship, marketing, design, R&amp;D and testing</li>
-        <li><strong>Human-centred approach</strong> — continuous usability focus throughout the development process</li>
+        <li><strong>Full lifecycle ownership</strong> — concept to launch in July 2020</li>
+        <li><strong>Cross-functional influence</strong> — chairmanship, marketing, design, R&amp;D and testing</li>
         <li><strong>Platform</strong> — Technogym Excite line with Technogym Live connectivity</li>
       </ul>
     </div>
   </div>
   <div class="detail-gallery">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/dMDP6nhxfwze59IuaoAWJN;1144x452.png?auto=webp" alt="Technogym Excite 2020 Display — full interface" loading="lazy">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/dLVjPuoWuUafjGL2glkAmO;1252x601.png?auto=webp" alt="2020 display portfolio — cardio screens" loading="lazy">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/8f7Y0XaL9ulfHm9NMNBeUN;1275x569.png?auto=webp" alt="UI portfolio 2020 — workout screen" loading="lazy">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/5kSrlrEO9AnbuTaq7n83Hh;1233x546.png?auto=webp" alt="UI portfolio 2020 — training modules" loading="lazy">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/kZzUhpj42xdeeUfULcWoZv;1255x530.png?auto=webp" alt="UI portfolio 2020 — entertainment screen" loading="lazy">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/hLTMLDroTaQfpmoQzRRwrf;1262x547.png?auto=webp" alt="UI portfolio 2020 — wellbeing hub" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/dMDP6nhxfwze59IuaoAWJN;1144x452.png?auto=webp" alt="Technogym 2020 Display — full interface" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/dLVjPuoWuUafjGL2glkAmO;1252x601.png?auto=webp" alt="2020 display — cardio screens" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/8f7Y0XaL9ulfHm9NMNBeUN;1275x569.png?auto=webp" alt="UI 2020 — workout screen" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/5kSrlrEO9AnbuTaq7n83Hh;1233x546.png?auto=webp" alt="UI 2020 — training modules" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/kZzUhpj42xdeeUfULcWoZv;1255x530.png?auto=webp" alt="UI 2020 — entertainment" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/hLTMLDroTaQfpmoQzRRwrf;1262x547.png?auto=webp" alt="UI 2020 — wellbeing hub" loading="lazy">
   </div>
-  <div class="detail-next">
-    <div><div class="detail-next-label">Next project</div><button class="detail-next-title" data-project="artis">Technogym Artis Line UI →</button></div>
-  </div>
+  <div class="detail-next"><div><div class="detail-next-label">Next</div><button class="detail-next-title" data-project="artis">Technogym Artis Line UI →</button></div></div>
   <div class="contact-bar"><span>marcobestonzo.com</span><span>© 2025</span></div>
 </div>
 
-
-<!-- ═══════════════════════════════════════ ARTIS ═══════════════════════════════════════ -->
 <div class="page" id="page-artis">
   <div class="detail-hero" data-initials="AR">
-    <button class="detail-back" data-showpage="home">← Back to overview</button>
+    <button class="detail-back" data-showpage="home">← Back</button>
     <div class="detail-tag">2019 · UI Renewal · Technogym</div>
     <h1 class="detail-title">Technogym Artis Line UI Update</h1>
     <div class="detail-org">Digital Product Developer Project Leader · Technogym S.p.A.</div>
   </div>
   <div class="detail-body">
     <div class="detail-meta-col">
-      <div class="detail-meta-item"><div class="detail-meta-label">Role</div><div class="detail-meta-value">Digital Product Developer Project Leader</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Period</div><div class="detail-meta-value">2019</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Platform</div><div class="detail-meta-value">Android · Unity 3</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">URL</div><div class="detail-meta-value">technogym.com/it/line/linea-artis/</div></div>
+      <div><div class="detail-meta-label">Role</div><div class="detail-meta-value">Digital Product Developer Project Leader</div></div>
+      <div><div class="detail-meta-label">Period</div><div class="detail-meta-value">2019</div></div>
+      <div><div class="detail-meta-label">Platform</div><div class="detail-meta-value">Android · Unity 3</div></div>
     </div>
-    <div class="detail-content-col">
-      <p class="detail-summary">Led the full UI update for the Artis line — Run, Bike, Recline, Synchro, Synchro with ramp, Vario, Climb. The new Android-based Unity 3 platform introduced a completely renewed digital experience across Technogym's premium cardio range.</p>
+    <div>
+      <p class="detail-summary">Led the full UI update for the Artis line on Android-based Unity 3 platform — covering Run, Bike, Recline, Synchro, Vario and Climb. Introduced Routines, wireless charger, streaming outdoors and the 2019 app portfolio integration.</p>
       <ul class="detail-bullets">
-        <li><strong>Routines</strong> — exercise sequence with a fitness coach guiding users step by step</li>
-        <li><strong>Wireless charger</strong> — integrated wireless charging for connected devices</li>
-        <li><strong>New training app</strong> — redesigned core training experience</li>
-        <li><strong>Streaming outdoors</strong> — new scenic running and cycling content</li>
-        <li><strong>App portfolio 2019 integration</strong> — full connectivity with Technogym ecosystem</li>
-        <li><strong>Enhanced hardware platform</strong> — new Unity 3 Android architecture</li>
+        <li><strong>Routines</strong> — step-by-step fitness coach guidance</li>
+        <li><strong>Wireless charger</strong> — integrated device charging</li>
+        <li><strong>Streaming outdoors</strong> — scenic running and cycling content</li>
+        <li><strong>2019 app portfolio</strong> — full Technogym ecosystem connectivity</li>
       </ul>
     </div>
   </div>
   <div class="detail-gallery">
     <img src="https://carbon-media.accelerator.net/0000000hYVd/6uiexJBMlz5fX2GdtQuCSZ;994x599.png?auto=webp" alt="Artis Line UI — home screen" loading="lazy">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/d8wdgpZ4Vu8fGWf9dS88Tm;1332x599.png?auto=webp" alt="Artis Line — Routines feature" loading="lazy">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/8r7Vl0VSvhjeTywlcVAlce;1091x742.png?auto=webp" alt="Artis Line — Training app screens" loading="lazy">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/3d92N0g9Pr0fxNt4icLne1;1030x731.png?auto=webp" alt="Artis Line — Streaming outdoors" loading="lazy">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/7Hj6lX5gxJNerrygmPj2fX;1076x483.png?auto=webp" alt="Artis Line — App portfolio 2019" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/d8wdgpZ4Vu8fGWf9dS88Tm;1332x599.png?auto=webp" alt="Artis Line — Routines" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/8r7Vl0VSvhjeTywlcVAlce;1091x742.png?auto=webp" alt="Artis Line — Training app" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/3d92N0g9Pr0fxNt4icLne1;1030x731.png?auto=webp" alt="Artis Line — Streaming" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/7Hj6lX5gxJNerrygmPj2fX;1076x483.png?auto=webp" alt="Artis Line — App portfolio" loading="lazy">
   </div>
-  <div class="detail-next">
-    <div><div class="detail-next-label">Next project</div><button class="detail-next-title" data-project="samsung">Samsung Galaxy Watch Integration →</button></div>
-  </div>
+  <div class="detail-next"><div><div class="detail-next-label">Next</div><button class="detail-next-title" data-project="samsung">Samsung Galaxy Watch Integration →</button></div></div>
   <div class="contact-bar"><span>marcobestonzo.com</span><span>© 2025</span></div>
 </div>
 
-
-<!-- ═══════════════════════════════════════ SAMSUNG ═══════════════════════════════════════ -->
 <div class="page" id="page-samsung">
   <div class="detail-hero" data-initials="SW">
-    <button class="detail-back" data-showpage="home">← Back to overview</button>
+    <button class="detail-back" data-showpage="home">← Back</button>
     <div class="detail-tag">2019 · Hardware Integration · Technogym × Samsung</div>
     <h1 class="detail-title">Samsung Galaxy Watch Active Integration</h1>
     <div class="detail-org">Digital Product Developer – Project Leader · Technogym × Samsung</div>
   </div>
   <div class="detail-body">
     <div class="detail-meta-col">
-      <div class="detail-meta-item"><div class="detail-meta-label">Role</div><div class="detail-meta-value">Digital Product Developer – Project Leader</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Partners</div><div class="detail-meta-value">Technogym S.p.A. × Samsung</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Period</div><div class="detail-meta-value">2019</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Announced</div><div class="detail-meta-value">CES 2020</div></div>
+      <div><div class="detail-meta-label">Period</div><div class="detail-meta-value">2019</div></div>
+      <div><div class="detail-meta-label">Partners</div><div class="detail-meta-value">Technogym × Samsung</div></div>
+      <div><div class="detail-meta-label">Announced</div><div class="detail-meta-value">CES 2020</div></div>
     </div>
-    <div class="detail-content-col">
-      <p class="detail-summary">Led the integration of Samsung Galaxy Watch Active with Technogym equipment. Unveiled at CES 2020, the integration allows users to log in on Technogym equipment automatically with a simple tap and live a fully personalised training and entertainment experience — syncing data between smartwatch and fitness machine seamlessly.</p>
+    <div>
+      <p class="detail-summary">Led the integration of Samsung Galaxy Watch Active with Technogym equipment. Unveiled at CES 2020 — tap to login, full data sync between S-Health and Mywellness, personalised training and entertainment experience.</p>
       <ul class="detail-bullets">
-        <li><strong>Tap-to-login</strong> — automatic personalised login on Technogym equipment via Samsung Watch tap</li>
-        <li><strong>Full data sync</strong> — calories, distance, speed, floors climbed, incline and pace between S-Health and Mywellness app</li>
-        <li><strong>Personalised experience</strong> — entertainment and training preferences follow the user across machines</li>
-        <li><strong>CES 2020</strong> — announced at the world's largest consumer technology show</li>
+        <li><strong>Tap-to-login</strong> — automatic login on Technogym equipment via Watch tap</li>
+        <li><strong>Full data sync</strong> — calories, distance, speed, heart rate between S-Health and Mywellness</li>
+        <li><strong>CES 2020</strong> — announced at world's largest consumer tech show</li>
         <li>Press: TechRadar · technogym.com/newsroom</li>
       </ul>
     </div>
   </div>
   <div class="detail-gallery">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/jB5tjb6SIRNg3YCY0oQ0AE;1440x744.png?auto=webp" alt="Samsung Galaxy Watch Active — CES 2020 integration with Technogym" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/jB5tjb6SIRNg3YCY0oQ0AE;1440x744.png?auto=webp" alt="Samsung Galaxy Watch — CES 2020 Technogym integration" loading="lazy">
   </div>
-  <div class="detail-next">
-    <div><div class="detail-next-label">Next project</div><button class="detail-next-title" data-project="skillrun">Technogym Skillrun TX UI →</button></div>
-  </div>
+  <div class="detail-next"><div><div class="detail-next-label">Next</div><button class="detail-next-title" data-project="skillrun">Technogym Skillrun TX UI →</button></div></div>
   <div class="contact-bar"><span>marcobestonzo.com</span><span>© 2025</span></div>
 </div>
 
-
-<!-- ═══════════════════════════════════════ SKILLRUN ═══════════════════════════════════════ -->
 <div class="page" id="page-skillrun">
   <div class="detail-hero" data-initials="SK">
-    <button class="detail-back" data-showpage="home">← Back to overview</button>
+    <button class="detail-back" data-showpage="home">← Back</button>
     <div class="detail-tag">2018 · UI Design · Technogym</div>
     <h1 class="detail-title">Technogym Skillrun TX UI</h1>
     <div class="detail-org">Digital Product Developer · Technogym S.p.A.</div>
   </div>
   <div class="detail-body">
     <div class="detail-meta-col">
-      <div class="detail-meta-item"><div class="detail-meta-label">Role</div><div class="detail-meta-value">Digital Product Developer</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Period</div><div class="detail-meta-value">2018</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Product</div><div class="detail-meta-value">Skillrun TX — premium treadmill</div></div>
+      <div><div class="detail-meta-label">Period</div><div class="detail-meta-value">2018</div></div>
+      <div><div class="detail-meta-label">Product</div><div class="detail-meta-value">Skillrun TX — premium treadmill</div></div>
     </div>
-    <div class="detail-content-col">
-      <p class="detail-summary">Designed and developed the UI for the Technogym Skillrun TX — Technogym's premium performance treadmill combining traditional running with functional training. The interface focuses on performance metrics, HIIT protocols and real-time biomechanical feedback.</p>
+    <div>
+      <p class="detail-summary">Designed and developed the UI for the Technogym Skillrun TX — premium performance treadmill combining traditional running with functional training and biomechanical feedback.</p>
       <ul class="detail-bullets">
-        <li><strong>Performance metrics</strong> — real-time speed, power, stride and heart rate visualisation</li>
-        <li><strong>HIIT protocols</strong> — high-intensity interval training mode with coach guidance</li>
-        <li><strong>Functional training</strong> — sled push and cord pull resistance integration in the UI</li>
-        <li><strong>Connected training</strong> — Mywellness app synchronisation and personalised programs</li>
+        <li><strong>Performance metrics</strong> — real-time speed, power, stride and heart rate</li>
+        <li><strong>HIIT protocols</strong> — high-intensity interval training with coach guidance</li>
+        <li><strong>Functional training</strong> — sled push and cord pull resistance integration</li>
+        <li><strong>Connected</strong> — Mywellness sync and personalised programs</li>
       </ul>
     </div>
   </div>
   <div class="detail-gallery">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/9C5Z3mZEhZOeD5dnAo8K2B;1098x624.png?auto=webp" alt="Skillrun TX — main training UI" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/9C5Z3mZEhZOeD5dnAo8K2B;1098x624.png?auto=webp" alt="Skillrun TX — main UI" loading="lazy">
     <img src="https://carbon-media.accelerator.net/0000000hYVd/jVxtWkwEUtBdZdMCGuvrPL;1440x804.png?auto=webp" alt="Skillrun TX — performance metrics" loading="lazy">
     <img src="https://carbon-media.accelerator.net/0000000hYVd/5LveO9txnImeFlXeXj9hB0;1440x804.png?auto=webp" alt="Skillrun TX — workout modes" loading="lazy">
     <img src="https://carbon-media.accelerator.net/0000000hYVd/j9oW8XMDLO3egBXnPlpkq5;1440x812.png?auto=webp" alt="Skillrun TX — HIIT screen" loading="lazy">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/jKwxKssJSmZd1Xk4uR9CqN;1200x600.jpeg?auto=webp" alt="Skillrun TX — machine view" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/jKwxKssJSmZd1Xk4uR9CqN;1200x600.jpeg?auto=webp" alt="Skillrun TX — machine" loading="lazy">
   </div>
-  <div class="detail-next">
-    <div><div class="detail-next-label">Next project</div><button class="detail-next-title" data-project="gymkit">Apple GymKit Integration →</button></div>
-  </div>
+  <div class="detail-next"><div><div class="detail-next-label">Next</div><button class="detail-next-title" data-project="gymkit">Apple GymKit Integration →</button></div></div>
   <div class="contact-bar"><span>marcobestonzo.com</span><span>© 2025</span></div>
 </div>
 
-
-<!-- ═══════════════════════════════════════ GYMKIT ═══════════════════════════════════════ -->
 <div class="page" id="page-gymkit">
   <div class="detail-hero" data-initials="GK">
-    <button class="detail-back" data-showpage="home">← Back to overview</button>
+    <button class="detail-back" data-showpage="home">← Back</button>
     <div class="detail-tag">2017–2018 · Hardware Integration · Technogym × Apple</div>
     <h1 class="detail-title">Apple GymKit Integration</h1>
     <div class="detail-org">Digital Product Developer · Technogym S.p.A.</div>
   </div>
   <div class="detail-body">
     <div class="detail-meta-col">
-      <div class="detail-meta-item"><div class="detail-meta-label">Role</div><div class="detail-meta-value">Digital Product Developer</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Period</div><div class="detail-meta-value">2017 – 2018</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Announced</div><div class="detail-meta-value">Apple WWDC 2017</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Press</div><div class="detail-meta-value">The Verge · AppleInsider</div></div>
+      <div><div class="detail-meta-label">Period</div><div class="detail-meta-value">2017 – 2018</div></div>
+      <div><div class="detail-meta-label">Announced</div><div class="detail-meta-value">Apple WWDC 2017</div></div>
+      <div><div class="detail-meta-label">Press</div><div class="detail-meta-value">The Verge · AppleInsider</div></div>
     </div>
-    <div class="detail-content-col">
-      <p class="detail-summary">Responsible for the digital integration of Apple Watch GymKit at Technogym — making Technogym the <strong>first European manufacturer to integrate Apple GymKit</strong>. GymKit is an Apple technology that allows customers to connect their Apple Watch with enabled cardio equipment with a simple tap — working like Apple Pay for fitness machines.</p>
+    <div>
+      <p class="detail-summary">Responsible for the digital integration of Apple Watch GymKit at Technogym — making Technogym the <strong>first European manufacturer to integrate Apple GymKit</strong>. Announced at Apple WWDC 2017 and covered by The Verge and AppleInsider.</p>
       <ul class="detail-bullets">
-        <li><strong>First European manufacturer</strong> — Technogym was among the first global manufacturers to launch GymKit integration</li>
-        <li><strong>Announced at Apple WWDC 2017</strong> — presented on stage at Apple's worldwide developer conference</li>
-        <li><strong>Tap-to-connect</strong> — Apple Watch users tap their watch on equipment to sync workout data instantly</li>
-        <li><strong>Bidirectional data sync</strong> — calories, heart rate, distance between Apple Watch and Technogym machine</li>
-        <li><strong>Press coverage</strong> — featured in The Verge, AppleInsider and major tech publications globally</li>
+        <li><strong>First European manufacturer</strong> to launch GymKit integration globally</li>
+        <li><strong>Announced at Apple WWDC 2017</strong> — on stage at Apple's developer conference</li>
+        <li><strong>Tap-to-connect</strong> — like Apple Pay for fitness machines</li>
+        <li><strong>Bidirectional sync</strong> — calories, heart rate, distance</li>
       </ul>
     </div>
   </div>
   <div class="detail-gallery">
     <img src="https://carbon-media.accelerator.net/0000000hYVd/5JUHTc7Fmx7dKX20l4NG7m;1280x757.png?auto=webp" alt="Apple WWDC Keynote 2017 — GymKit launch" loading="lazy">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/eyFPIIqrFfSdVlrnqvOoWM;600x403.jpeg?auto=webp" alt="GymKit — tap Apple Watch on Technogym equipment" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/eyFPIIqrFfSdVlrnqvOoWM;600x403.jpeg?auto=webp" alt="GymKit — tap Apple Watch on Technogym" loading="lazy">
   </div>
-  <div class="detail-next">
-    <div><div class="detail-next-label">Next project</div><button class="detail-next-title" data-project="watson">IBM Watson Virtual Coach →</button></div>
-  </div>
+  <div class="detail-next"><div><div class="detail-next-label">Next</div><button class="detail-next-title" data-project="watson">IBM Watson Virtual Coach →</button></div></div>
   <div class="contact-bar"><span>marcobestonzo.com</span><span>© 2025</span></div>
 </div>
 
-
-<!-- ═══════════════════════════════════════ WATSON ═══════════════════════════════════════ -->
 <div class="page" id="page-watson">
   <div class="detail-hero" data-initials="AI">
-    <button class="detail-back" data-showpage="home">← Back to overview</button>
+    <button class="detail-back" data-showpage="home">← Back</button>
     <div class="detail-tag">2017 · AI · Technogym × IBM</div>
     <h1 class="detail-title">IBM Watson Virtual Coach</h1>
     <div class="detail-org">Digital Product Developer · Technogym × IBM Watson</div>
   </div>
   <div class="detail-body">
     <div class="detail-meta-col">
-      <div class="detail-meta-item"><div class="detail-meta-label">Role</div><div class="detail-meta-value">Digital Product Developer</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Period</div><div class="detail-meta-value">2017</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Technology</div><div class="detail-meta-value">IBM Watson AI · NLP</div></div>
+      <div><div class="detail-meta-label">Period</div><div class="detail-meta-value">2017</div></div>
+      <div><div class="detail-meta-label">Technology</div><div class="detail-meta-value">IBM Watson AI · NLP</div></div>
     </div>
-    <div class="detail-content-col">
-      <p class="detail-summary">Responsible for the development of the Technogym Virtual Coach powered by IBM Watson. The goal: a virtual Technogym coach capable of interacting with users in natural language to offer personalised training programs based on goals and context variables — weather, personal commitments, health conditions and dietary habits.</p>
+    <div>
+      <p class="detail-summary">Developed the Technogym Virtual Coach powered by IBM Watson — a conversational AI coach interacting with users in natural language to offer personalised training programs based on goals, health conditions and lifestyle context. An early application of conversational AI in wellness, years before it became mainstream.</p>
       <ul class="detail-bullets">
-        <li><strong>Natural language interface</strong> — AI coach that converses with users to understand their needs and context</li>
-        <li><strong>Personalised programming</strong> — training plans adapted to goals, health conditions and lifestyle variables</li>
-        <li><strong>Context awareness</strong> — integration of weather, schedule and dietary inputs into coaching logic</li>
-        <li><strong>IBM Watson NLP</strong> — powered by IBM's enterprise AI platform for natural language understanding</li>
-        <li>Early application of conversational AI in the wellness industry — years before it became mainstream</li>
+        <li><strong>Natural language interface</strong> — AI coach that converses to understand user needs</li>
+        <li><strong>Context-aware</strong> — weather, schedule, health, dietary inputs into coaching logic</li>
+        <li><strong>IBM Watson NLP</strong> — enterprise AI for natural language understanding</li>
       </ul>
     </div>
   </div>
   <div class="detail-gallery">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/2bsxkghCWB9bxCUAeYretx;1839x863.jpeg?auto=webp" alt="Technogym + IBM Watson — Virtual Coach AI interface" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/2bsxkghCWB9bxCUAeYretx;1839x863.jpeg?auto=webp" alt="Technogym + IBM Watson Virtual Coach" loading="lazy">
   </div>
-  <div class="detail-next">
-    <div><div class="detail-next-label">Next project</div><button class="detail-next-title" data-project="intoino">INTOINO — IoT Edtech Startup →</button></div>
-  </div>
+  <div class="detail-next"><div><div class="detail-next-label">Next</div><button class="detail-next-title" data-project="intoino">INTOINO — IoT Edtech Startup →</button></div></div>
   <div class="contact-bar"><span>marcobestonzo.com</span><span>© 2025</span></div>
 </div>
 
-
-<!-- ═══════════════════════════════════════ INTOINO ═══════════════════════════════════════ -->
 <div class="page" id="page-intoino">
   <div class="detail-hero" data-initials="IN">
-    <button class="detail-back" data-showpage="home">← Back to overview</button>
+    <button class="detail-back" data-showpage="home">← Back</button>
     <div class="detail-tag">2012–2016 · Startup · IoT · Edtech</div>
     <h1 class="detail-title">INTOINO S.r.l.</h1>
     <div class="detail-org">CEO &amp; Co-founder · IoT Edtech Startup</div>
   </div>
   <div class="detail-body">
     <div class="detail-meta-col">
-      <div class="detail-meta-item"><div class="detail-meta-label">Role</div><div class="detail-meta-value">CEO &amp; Co-founder</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Period</div><div class="detail-meta-value">2012 – 2016</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Raised</div><div class="detail-meta-value">€0.5M</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Awards</div><div class="detail-meta-value">15+ international</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Recognition</div><div class="detail-meta-value">The Economist Top 3 worldwide · 2014</div></div>
+      <div><div class="detail-meta-label">Role</div><div class="detail-meta-value">CEO &amp; Co-founder</div></div>
+      <div><div class="detail-meta-label">Period</div><div class="detail-meta-value">2012 – 2016</div></div>
+      <div><div class="detail-meta-label">Raised</div><div class="detail-meta-value">€0.5M</div></div>
+      <div><div class="detail-meta-label">Recognition</div><div class="detail-meta-value">The Economist Top 3 worldwide · 2014</div></div>
     </div>
-    <div class="detail-content-col">
-      <p class="detail-summary">Co-founded and led INTOINO from zero — an IoT edtech startup making coding and electronics accessible to students through physical kits and a cloud learning platform. Built everything: hardware design, software platform, go-to-market, fundraising. Selected Top 3 startup worldwide by The Economist in 2014 and by the European Commission IMPACT Accelerator.</p>
+    <div>
+      <p class="detail-summary">Co-founded and led INTOINO from zero — an IoT edtech startup making coding and electronics accessible to students. Built everything: hardware design, software platform, go-to-market, fundraising. Selected Top 3 startup worldwide by The Economist and by the European Commission IMPACT Accelerator.</p>
       <ul class="detail-bullets">
-        <li><strong>Built from scratch</strong> — hardware design, firmware, cloud platform, curriculum, distribution</li>
-        <li><strong>Top 3 worldwide</strong> — selected by The Economist as one of the three best startups globally (2014)</li>
-        <li><strong>EC IMPACT Accelerator</strong> — selected by the European Commission; later invited back as programme mentor</li>
-        <li><strong>€0.5M raised</strong> — from institutional investors and public grants</li>
-        <li><strong>15+ international awards</strong> — including recognition from educational and technology institutions across Europe</li>
-        <li><strong>Entrepreneurship &amp; public speaking</strong> — pitched at major venues across Europe including EC events</li>
+        <li><strong>Built from scratch</strong> — hardware, firmware, cloud platform, curriculum, distribution</li>
+        <li><strong>Top 3 worldwide</strong> — The Economist (2014) · 15+ international awards</li>
+        <li><strong>EC IMPACT Accelerator</strong> — selected, then invited back as programme mentor</li>
+        <li><strong>€0.5M raised</strong> — institutional investors and public grants</li>
       </ul>
     </div>
   </div>
   <div class="detail-gallery">
     <img src="https://carbon-media.accelerator.net/0000000hYVd/iYM2LuE5M4Nd4kGynCSZjC;1000x667.jpeg?auto=webp" alt="INTOINO — IoT edtech kit" loading="lazy">
     <img src="https://carbon-media.accelerator.net/0000000hYVd/0dgYfniOyq9fPpZ4cCT7Cs;948x556.png?auto=webp" alt="INTOINO — platform dashboard" loading="lazy">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/3tJNKs5rUmseDnwbXhHRPT;1024x678.jpeg?auto=webp" alt="INTOINO — classroom deployment" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/3tJNKs5rUmseDnwbXhHRPT;1024x678.jpeg?auto=webp" alt="INTOINO — classroom" loading="lazy">
     <img src="https://carbon-media.accelerator.net/0000000hYVd/jArFckA1MhScYE4l9OwvZF;1440x900.png?auto=webp" alt="INTOINO — coding environment" loading="lazy">
     <img src="https://carbon-media.accelerator.net/0000000hYVd/9zomt3GSZiIeWMv6ipAZvY;1024x577.jpeg?auto=webp" alt="INTOINO — award ceremony" loading="lazy">
   </div>
-  <div class="detail-next">
-    <div><div class="detail-next-label">Next project</div><button class="detail-next-title" data-project="ki">Karolinska Institutet →</button></div>
-  </div>
+  <div class="detail-next"><div><div class="detail-next-label">Next</div><button class="detail-next-title" data-project="ki">Karolinska Institutet →</button></div></div>
   <div class="contact-bar"><span>marcobestonzo.com</span><span>© 2025</span></div>
 </div>
 
-
-<!-- ═══════════════════════════════════════ KAROLINSKA ═══════════════════════════════════════ -->
 <div class="page" id="page-ki">
   <div class="detail-hero" data-initials="KI">
-    <button class="detail-back" data-showpage="home">← Back to overview</button>
+    <button class="detail-back" data-showpage="home">← Back</button>
     <div class="detail-tag">2011–2012 · Research · Stockholm</div>
     <h1 class="detail-title">Karolinska Institutet — Bioentrepreneurship &amp; Innovation</h1>
-    <div class="detail-org">Assistant Researcher · Stockholm, Sweden · Sponsored by CRT Foundation</div>
+    <div class="detail-org">Assistant Researcher · Stockholm · CRT Foundation</div>
   </div>
   <div class="detail-body">
     <div class="detail-meta-col">
-      <div class="detail-meta-item"><div class="detail-meta-label">Role</div><div class="detail-meta-value">Assistant Researcher</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Period</div><div class="detail-meta-value">2011 – 2012</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Institution</div><div class="detail-meta-value">Nobel Prize University</div></div>
-      <div class="detail-meta-item"><div class="detail-meta-label">Sponsor</div><div class="detail-meta-value">CRT Foundation · "Master dei Talenti Neolaureati"</div></div>
+      <div><div class="detail-meta-label">Role</div><div class="detail-meta-value">Assistant Researcher</div></div>
+      <div><div class="detail-meta-label">Period</div><div class="detail-meta-value">2011 – 2012</div></div>
+      <div><div class="detail-meta-label">Institution</div><div class="detail-meta-value">Nobel Prize University</div></div>
+      <div><div class="detail-meta-label">Sponsor</div><div class="detail-meta-value">CRT Foundation</div></div>
     </div>
-    <div class="detail-content-col">
-      <p class="detail-summary">Assistant researcher within the areas of entrepreneurship and innovation at Karolinska Institutet — one of Europe's premier medical universities and home of the Nobel Prize in Physiology or Medicine. Dropped a PhD position at the Italian Institute of Technology to take this research role and explore the intersection of life science, innovation and business.</p>
+    <div>
+      <p class="detail-summary">Assistant researcher at Karolinska Institutet — the Nobel Prize university — in the areas of bioentrepreneurship and innovation. Dropped a PhD at IIT Turin to take this position. The experience directly shaped the founding of INTOINO and subsequent entrepreneurial path.</p>
       <ul class="detail-bullets">
-        <li><strong>Bioentrepreneurship unit</strong> — research in life science, innovation and the business of science</li>
-        <li><strong>Attended Niklas Zennström</strong> (Skype co-founder, CEO of Atomico Ventures) and <strong>Andreas Ehn</strong> (first Spotify CTO, founder of Wrapp) pitch sessions live</li>
-        <li>Project management methodologies, research methodology and analysis, communication and the life science industry</li>
-        <li><strong>CRT Foundation grant</strong> — sponsored by Italy's largest conference within science, economy, art and philosophy</li>
-        <li>Experience that directly informed the founding of INTOINO and subsequent entrepreneurial career</li>
+        <li><strong>Bioentrepreneurship unit</strong> — life science, innovation and the business of science</li>
+        <li>Live pitch sessions with Niklas Zennström (Skype, Atomico) and Andreas Ehn (first Spotify CTO)</li>
+        <li><strong>CRT Foundation grant</strong> — "Master dei Talenti Neolaureati"</li>
+        <li>Foundation for the entrepreneurial career that followed</li>
       </ul>
     </div>
   </div>
   <div class="detail-gallery">
     <img src="https://carbon-media.accelerator.net/0000000hYVd/czL6DYTOEawcrtu8o6ZFi8;1599x1062.jpeg?auto=webp" alt="Karolinska Institutet — Stockholm campus" loading="lazy">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/eN3NDiPbBbHdy3kZuCkQoo;1024x768.jpeg?auto=webp" alt="Karolinska — bioentrepreneurship research" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/eN3NDiPbBbHdy3kZuCkQoo;1024x768.jpeg?auto=webp" alt="Karolinska — research" loading="lazy">
     <img src="https://carbon-media.accelerator.net/0000000hYVd/lAScOSPwGI8g7e4eSEtFMa;1024x768.jpeg?auto=webp" alt="Karolinska — innovation programme" loading="lazy">
-    <img src="https://carbon-media.accelerator.net/0000000hYVd/g26Hxz5w769cxCabRLEJXM;1280x960.jpeg?auto=webp" alt="Karolinska — life science innovation" loading="lazy">
+    <img src="https://carbon-media.accelerator.net/0000000hYVd/g26Hxz5w769cxCabRLEJXM;1280x960.jpeg?auto=webp" alt="Karolinska — life science" loading="lazy">
   </div>
-  <div class="detail-next">
-    <div><div class="detail-next-label">Back to top</div><button class="detail-next-title" data-project="bkn">BKN301 — MENA Digital Banking →</button></div>
-  </div>
+  <div class="detail-next"><div><div class="detail-next-label">Back to top</div><button class="detail-next-title" data-project="bkn">BKN301 — MENA Digital Banking →</button></div></div>
   <div class="contact-bar"><span>marcobestonzo.com</span><span>© 2025</span></div>
 </div>
 
 
 <script>
+/* ── ROUTING ── */
 var projectPageMap={bkn:'page-bkn',tg2020:'page-tg2020',artis:'page-artis',samsung:'page-samsung',skillrun:'page-skillrun',gymkit:'page-gymkit',watson:'page-watson',intoino:'page-intoino',ki:'page-ki'};
 
 function showPage(id){
@@ -743,51 +843,54 @@ function showPage(id){
   var t=document.getElementById('page-'+id);
   if(t){t.classList.add('active');window.scrollTo(0,0);}
 }
-
 function showProject(key){
-  var pid=projectPageMap[key];
-  if(!pid)return;
+  var pid=projectPageMap[key];if(!pid)return;
   document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
   var t=document.getElementById(pid);
   if(t){t.classList.add('active');window.scrollTo(0,0);}
 }
-
 function gotoSection(id){
   var homePage=document.getElementById('page-home');
   var isHome=homePage.classList.contains('active');
   if(!isHome){showPage('home');}
-  setTimeout(function(){
-    var el=document.getElementById(id);
-    if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}
-  },isHome?0:80);
+  setTimeout(function(){var el=document.getElementById(id);if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}},isHome?0:80);
 }
-
 function closeNav(){
   document.getElementById('ham').classList.remove('open');
   document.getElementById('mobileNav').classList.remove('open');
 }
 
+/* ── CASE ACCORDION ── */
+function toggleCase(id){
+  var item=document.getElementById(id);
+  item.classList.toggle('open');
+}
+
+/* ── LANGUAGE ── */
+var currentLang='en';
+function setLang(lang){
+  currentLang=lang;
+  document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent===lang.toUpperCase());});
+  document.querySelectorAll('[data-'+lang+']').forEach(function(el){
+    var val=el.getAttribute('data-'+lang);
+    if(val){el.innerHTML=val;}
+  });
+  document.documentElement.lang=lang;
+}
+
+/* ── NAV DELEGATION ── */
 document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('ham').addEventListener('click',function(){
     this.classList.toggle('open');
     document.getElementById('mobileNav').classList.toggle('open');
   });
-
   document.addEventListener('click',function(e){
     var el=e.target.closest('[data-showpage]');
     if(el){e.preventDefault();showPage(el.getAttribute('data-showpage'));return;}
-
     var el2=e.target.closest('[data-goto]');
-    if(el2){
-      e.preventDefault();
-      if(el2.getAttribute('data-close'))closeNav();
-      gotoSection(el2.getAttribute('data-goto'));
-      return;
-    }
-
+    if(el2){e.preventDefault();if(el2.getAttribute('data-close'))closeNav();gotoSection(el2.getAttribute('data-goto'));return;}
     var el3=e.target.closest('[data-project]');
     if(el3){e.preventDefault();showProject(el3.getAttribute('data-project'));return;}
-
     var ham=document.getElementById('ham');
     var mn=document.getElementById('mobileNav');
     if(!ham.contains(e.target)&&!mn.contains(e.target)){closeNav();}
