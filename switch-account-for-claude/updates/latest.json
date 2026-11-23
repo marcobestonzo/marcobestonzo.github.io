@@ -1,7 +1,7 @@
 {
-  "version": "2.6",
-  "url": "https://marcobestonzo.com/switch-account-for-claude/updates/SwitchAccountForClaude-2.6.zip",
-  "sha256": "faa65394fdaf822ec733d50a5f5ed85f2dac767e968692e2ca5aa588fc01ad1d",
-  "signature": "DvaCvKVFJ6OIN/70Ii4V0QRnriULrQsT6V61oGcQ6NOB/poofI84ghd7tnLV+0YxZQ5V6KXO1ZR/1oiMMAYHCA==",
-  "notes": ""
+  "version": "2.7",
+  "url": "https://marcobestonzo.com/switch-account-for-claude/updates/SwitchAccountForClaude-2.7.zip",
+  "sha256": "b4b7371721f5f61bec3f3af62376e11cdc23bea27585492a0b322632eebdede5",
+  "signature": "45KjjlUERWoL82o4BGw4AqkoVZ8O26SgVhMJGfsObjZNHlF+fQLrA1xc9rG3Wxgu80tWMtmv3XHkrm0805JMCA==",
+  "notes": "Primo aggiornamento automatico"
 }
