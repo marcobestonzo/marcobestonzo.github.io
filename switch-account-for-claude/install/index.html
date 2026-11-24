@@ -30,6 +30,8 @@ h2{font-size:1.3rem;margin:0;letter-spacing:-.01em;text-wrap:balance}
 p{margin:0;max-width:64ch}
 .muted{color:var(--muted)}
 .lede{font-size:1.1rem;color:var(--muted)}
+.dl{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:6px}
+.btn.big{font-size:17px;padding:14px 22px;border-radius:12px}
 .callout{background:var(--accent-soft);border-radius:14px;padding:18px 20px;display:grid;gap:8px}
 .callout b{color:var(--fg)}
 /* fast path */
@@ -97,21 +99,15 @@ a{color:var(--accent)}
     <div class="brand"><img src="icon.png" alt="">Switch Account for Claude</div>
     <h1>Install and open the app (2 minutes, once)</h1>
     <p class="lede">The app isn’t sold through the App Store, so the first time you open it macOS shows a warning and blocks it. That’s normal for independent Mac apps. Here’s exactly how to get past it.</p>
+    <div class="dl">
+      <a class="btn big" href="https://switch.marcobestonzo.com">Download for Mac</a>
+      <span class="muted">Free, pay what you want. You get a <b>.dmg</b> file to open in step 1.</span>
+    </div>
   </header>
 
-  <section class="fast" aria-labelledby="fast-title">
-    <span class="tag">Fastest way · if you’re fine with Terminal</span>
-    <h2 id="fast-title">After dragging the app to Applications, run this once</h2>
-    <p class="muted">It removes the “downloaded from the internet” flag from this one app, so macOS lets it open. Then open the app normally and skip to step 5.</p>
-    <div class="cmd">
-      <code id="cmd">xattr -dr com.apple.quarantine "/Applications/Switch Account for Claude.app"</code>
-      <button type="button" id="copy">Copy</button>
-    </div>
-    <p class="muted" id="copied" hidden>Copied. Paste it into Terminal (Applications → Utilities → Terminal) and press Return.</p>
-  </section>
 
   <section aria-labelledby="steps-title">
-    <h2 id="steps-title" style="margin-bottom:22px">Or the step-by-step way, no Terminal</h2>
+    <h2 id="steps-title" style="margin-bottom:22px">Install in 5 steps</h2>
     <ol class="steps">
 
       <li>
@@ -162,6 +158,17 @@ a{color:var(--accent)}
     </ol>
   </section>
 
+  <section class="fast" aria-labelledby="fast-title">
+    <span class="tag">Shortcut for developers</span>
+    <h2 id="fast-title">Prefer Terminal? Skip steps 2–4 with one command</h2>
+    <p class="muted">It removes the “downloaded from the internet” flag from this one app, so macOS lets it open. Run it after step 1, then open the app normally and continue with step 5.</p>
+    <div class="cmd">
+      <code id="cmd">xattr -dr com.apple.quarantine "/Applications/Switch Account for Claude.app"</code>
+      <button type="button" id="copy">Copy</button>
+    </div>
+    <p class="muted" id="copied" hidden>Copied. Paste it into Terminal (Applications → Utilities → Terminal) and press Return.</p>
+  </section>
+
   <section class="callout">
     <b>Why does macOS warn about this app?</b>
     <p>Apple shows this for every app that isn’t notarized through its paid developer program, whatever the app does. Switch Account for Claude only moves Claude’s own folders on your Mac. Your chats and logins never leave your computer; the app only checks marcobestonzo.com for updates.</p>
@@ -171,7 +178,7 @@ a{color:var(--accent)}
     <h2 id="help-title" style="margin-bottom:8px">If something doesn’t match</h2>
     <details>
       <summary>I don’t see “Open Anyway” in Privacy &amp; Security</summary>
-      <div><p class="muted">macOS only shows the button for about an hour after a blocked attempt. Open the app again, click <b>Done</b>, then go straight back to Privacy &amp; Security and scroll to the very bottom. Or use the Terminal command at the top of this page.</p></div>
+      <div><p class="muted">macOS only shows the button for about an hour after a blocked attempt. Open the app again, click <b>Done</b>, then go straight back to Privacy &amp; Security and scroll to the very bottom. Or use the Terminal shortcut further up this page.</p></div>
     </details>
     <details>
       <summary>It says the app “is damaged and can’t be opened”</summary>
