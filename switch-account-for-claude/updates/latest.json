@@ -1,7 +1,7 @@
 {
-  "version": "2.7.1",
-  "url": "https://marcobestonzo.com/switch-account-for-claude/updates/SwitchAccountForClaude-2.7.1.zip",
-  "sha256": "1e5bf5b7be671147f4b84a0bff165feabe82d28e68e26dfca2f6c6abc4ac0e0b",
-  "signature": "bwm/LbNwp33Ta0tIzl7kjCUjlv/5f/pwWkZRFZlDhEkcp2BbLnUxVnE8ErO5uNDRQbpZCJao8hGt8NutnSmkAw==",
-  "notes": "Safer restart after updates"
+  "version": "2.8",
+  "url": "https://marcobestonzo.com/switch-account-for-claude/updates/SwitchAccountForClaude-2.8.zip",
+  "sha256": "fe0be8e36c8954c5c2e5ccc95f7dfe3f4855d056df81654605502092ed990820",
+  "signature": "G5G3MVk6W7pOSuKfdmiaWC2FGCrxFR3MX4wJZ7MswD+LtuPq4s085Hal9LtuiNEZ/vhZdtL++F6kJJ8VSVdFBA==",
+  "notes": "New look in Claude colours: white for Work, terracotta for Personal. Full menu with Switch Instantly, Open at Login, About, updates and Quit. Safer restart after updates."
 }
