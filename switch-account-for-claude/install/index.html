@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Install Switch Account for Claude</title>
+<meta name="description" content="How to install and open Switch Account for Claude on your Mac, including the macOS 'Not Opened' message.">
+<link rel="icon" href="icon.png">
+<style>
+/* Layout: one reading column of numbered steps, each with a small mock of what macOS shows */
+:root{
+  --bg:#faf9f5; --surface:#ffffff; --fg:#141413; --muted:#6b6860; --line:#e6e3da;
+  --accent:#c8623f; --accent-soft:#f6e3da; --ok:#2e7d4f; --bad:#b3261e; --mac-blue:#0a7aff;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#1f1e1b; --surface:#2b2a27; --fg:#f0eee6; --muted:#a8a498; --line:#3d3b36;
+  --accent:#d97757; --accent-soft:#3a2a23; --ok:#6cc08b; --bad:#ff8a80; color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 var(--font);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:760px;margin:0 auto;padding-block:48px 56px;display:grid;gap:44px}
+.wrap > *{min-width:0}
+header{display:grid;gap:14px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--muted);font-weight:500}
+.brand img{width:44px;height:44px;border-radius:10px}
+h1{font-size:clamp(1.9rem,5vw,2.6rem);line-height:1.1;margin:0;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:1.3rem;margin:0;letter-spacing:-.01em;text-wrap:balance}
+p{margin:0;max-width:64ch}
+.muted{color:var(--muted)}
+.lede{font-size:1.1rem;color:var(--muted)}
+.callout{background:var(--accent-soft);border-radius:14px;padding:18px 20px;display:grid;gap:8px}
+.callout b{color:var(--fg)}
+/* fast path */
+.fast{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:14px}
+.fast > *{min-width:0}
+.tag{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--accent)}
+.cmd{display:flex;gap:10px;align-items:stretch;flex-wrap:wrap}
+.cmd code{flex:1 1 260px;min-width:0;max-width:100%;overflow-x:auto;white-space:nowrap;background:var(--bg);border:1px solid var(--line);
+  border-radius:10px;padding:12px 14px;font:14px/1.5 var(--mono)}
+button,.btn{font:600 15px var(--font);border:0;border-radius:10px;padding:12px 16px;cursor:pointer;background:var(--accent);color:#fff;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+button:focus-visible,.btn:focus-visible{outline:3px solid var(--fg);outline-offset:2px}
+/* steps */
+ol.steps{list-style:none;margin:0;padding:0;display:grid;gap:40px;counter-reset:s}
+ol.steps > li{display:grid;grid-template-columns:2.4rem 1fr;gap:6px 16px;counter-increment:s}
+ol.steps > li::before{content:counter(s);grid-row:span 3;width:2.4rem;height:2.4rem;border-radius:50%;background:var(--accent);color:#fff;
+  display:grid;place-items:center;font-weight:700}
+ol.steps > li > *{grid-column:2;min-width:0}
+.mock{margin-top:12px}
+/* mock: dialog */
+.dialog{width:min(300px,100%);background:#f2f2f2;color:#1d1d1f;border-radius:18px;padding:22px 20px 18px;box-shadow:0 12px 40px rgba(0,0,0,.18);display:grid;gap:10px;font-size:14px;line-height:1.35}
+.dialog .ico{width:52px;height:52px;border-radius:12px;background:linear-gradient(#e9e9e9,#cfcfcf);display:grid;place-items:center;font-size:26px}
+.dialog b{font-size:16px}
+.dialog .btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+.dialog .b{border-radius:999px;padding:8px;text-align:center;font-weight:600;font-size:14px;position:relative}
+.b.grey{background:#dcdcdc}
+.b.blue{background:var(--mac-blue);color:#fff}
+.b.pick{outline:3px solid var(--ok);outline-offset:3px}
+.b.no{opacity:.45;text-decoration:line-through}
+.note-ok{color:var(--ok);font-weight:600}
+.note-bad{color:var(--bad);font-weight:600}
+/* mock: settings */
+.settings{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;font-size:14px;max-width:520px}
+.settings .bar{display:flex;gap:6px;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line);color:var(--muted)}
+.dot{width:11px;height:11px;border-radius:50%}
+.settings .body{display:grid;grid-template-columns:150px 1fr;min-height:200px}
+.settings .side{border-right:1px solid var(--line);padding:10px;display:grid;gap:4px;align-content:start;color:var(--muted)}
+.settings .side .sel{background:var(--mac-blue);color:#fff;border-radius:6px;padding:3px 8px}
+.settings .side span{padding:3px 8px}
+.settings .main{padding:14px;display:grid;gap:10px;align-content:start}
+.settings .faded{color:var(--muted);font-size:13px}
+.settings .sec{font-weight:600;margin-top:6px}
+.settings .row{border:1px solid var(--line);border-radius:10px;padding:10px 12px;display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.settings .open{background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:4px 10px;font-weight:600;outline:3px solid var(--ok);outline-offset:2px}
+.scroll{font-size:13px;color:var(--accent);font-weight:600}
+/* mock: dmg */
+.dmg{display:flex;align-items:center;gap:18px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px;width:fit-content;max-width:100%;flex-wrap:wrap}
+.dmg img{width:64px;height:64px;border-radius:14px}
+.dmg .arrow{font-size:28px;color:var(--mac-blue)}
+.dmg .apps{width:64px;height:54px;border-radius:10px;background:#7fb2f0;display:grid;place-items:center;color:#fff;font-weight:700;font-size:11px}
+/* faq */
+details{border-top:1px solid var(--line);padding-block:14px}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:600}
+details > div{padding-top:10px;display:grid;gap:10px}
+footer{color:var(--muted);font-size:14px;display:grid;gap:6px;border-top:1px solid var(--line);padding-top:20px}
+a{color:var(--accent)}
+@media (max-width:560px){.settings .body{grid-template-columns:1fr}.settings .side{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header>
+    <div class="brand"><img src="icon.png" alt="">Switch Account for Claude</div>
+    <h1>Install and open the app (2 minutes, once)</h1>
+    <p class="lede">The app isn’t sold through the App Store, so the first time you open it macOS shows a warning and blocks it. That’s normal for independent Mac apps. Here’s exactly how to get past it.</p>
+  </header>
+
+  <section class="fast" aria-labelledby="fast-title">
+    <span class="tag">Fastest way · if you’re fine with Terminal</span>
+    <h2 id="fast-title">After dragging the app to Applications, run this once</h2>
+    <p class="muted">It removes the “downloaded from the internet” flag from this one app, so macOS lets it open. Then open the app normally and skip to step 5.</p>
+    <div class="cmd">
+      <code id="cmd">xattr -dr com.apple.quarantine "/Applications/Switch Account for Claude.app"</code>
+      <button type="button" id="copy">Copy</button>
+    </div>
+    <p class="muted" id="copied" hidden>Copied. Paste it into Terminal (Applications → Utilities → Terminal) and press Return.</p>
+  </section>
+
+  <section aria-labelledby="steps-title">
+    <h2 id="steps-title" style="margin-bottom:22px">Or the step-by-step way, no Terminal</h2>
+    <ol class="steps">
+
+      <li>
+        <h2>Drag the app into Applications</h2>
+        <p class="muted">Open the downloaded <b>SwitchAccountForClaude.dmg</b> and drag the app onto the Applications folder.</p>
+        <div class="mock dmg" aria-hidden="true"><img src="icon.png" alt=""><span class="arrow">→</span><span class="apps">Applications</span></div>
+      </li>
+
+      <li>
+        <h2>Open it once, then click <span class="note-ok">Done</span></h2>
+        <p class="muted">Open the app from Applications. macOS shows <i>“Switch Account for Claude” Not Opened</i> and mentions malware. That only means Apple hasn’t reviewed it. Click <b>Done</b>. <span class="note-bad">Don’t click “Move to Bin”</span>, which deletes the app.</p>
+        <div class="mock dialog" aria-hidden="true">
+          <div class="ico">⚠️</div>
+          <b>“Switch Account for Claude” Not Opened</b>
+          <span>Apple could not verify “Switch Account for Claude” is free of malware that may harm your Mac or compromise your privacy.</span>
+          <div class="btns"><span class="b grey pick">Done</span><span class="b blue no">Move to Bin</span></div>
+        </div>
+      </li>
+
+      <li>
+        <h2>Go straight to Privacy &amp; Security and scroll to the bottom</h2>
+        <p class="muted">Open <b>System Settings → Privacy &amp; Security</b> and <b>scroll all the way down</b>, past all the privacy permissions, to the <b>Security</b> section. There you’ll find <i>“Switch Account for Claude” was blocked to protect your Mac</i>. Click <b>Open Anyway</b>.</p>
+        <p><a class="btn" href="x-apple.systempreferences:com.apple.settings.PrivacySecurity.extension?Security">Open Privacy &amp; Security</a></p>
+        <div class="mock settings" aria-hidden="true">
+          <div class="bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span>&nbsp; Privacy &amp; Security</div>
+          <div class="body">
+            <div class="side"><span>Wi‑Fi</span><span>Bluetooth</span><span>General</span><span class="sel">Privacy &amp; Security</span><span>Desktop &amp; Dock</span></div>
+            <div class="main">
+              <span class="faded">Location Services · Contacts · Calendars · Photos · …</span>
+              <span class="scroll">↓ scroll all the way down</span>
+              <span class="sec">Security</span>
+              <div class="row"><span>“Switch Account for Claude” was blocked to protect your Mac.</span><span class="open">Open Anyway</span></div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <h2>Confirm with your password, then <span class="note-ok">Open Anyway</span></h2>
+        <p class="muted">Enter your Mac password or use Touch ID. One more window appears, and this time it has an <b>Open Anyway</b> button. Click it. macOS won’t ask again.</p>
+      </li>
+
+      <li>
+        <h2>Allow it to control Claude</h2>
+        <p class="muted">On the first switch, macOS asks whether the app may control Claude. Click <b>Allow</b>: the app needs it to quit Claude before swapping accounts. Then sign in to your second account once, and you’re set.</p>
+      </li>
+
+    </ol>
+  </section>
+
+  <section class="callout">
+    <b>Why does macOS warn about this app?</b>
+    <p>Apple shows this for every app that isn’t notarized through its paid developer program, whatever the app does. Switch Account for Claude only moves Claude’s own folders on your Mac. Your chats and logins never leave your computer; the app only checks marcobestonzo.com for updates.</p>
+  </section>
+
+  <section aria-labelledby="help-title">
+    <h2 id="help-title" style="margin-bottom:8px">If something doesn’t match</h2>
+    <details>
+      <summary>I don’t see “Open Anyway” in Privacy &amp; Security</summary>
+      <div><p class="muted">macOS only shows the button for about an hour after a blocked attempt. Open the app again, click <b>Done</b>, then go straight back to Privacy &amp; Security and scroll to the very bottom. Or use the Terminal command at the top of this page.</p></div>
+    </details>
+    <details>
+      <summary>It says the app “is damaged and can’t be opened”</summary>
+      <div><p class="muted">The download was changed on the way, usually by unzipping it with another tool. Download it again and open the .dmg by double-clicking it in Finder.</p></div>
+    </details>
+    <details>
+      <summary>I accidentally clicked “Move to Bin”</summary>
+      <div><p class="muted">Open the Bin, drag the app back into Applications, and start again from step 2.</p></div>
+    </details>
+    <details>
+      <summary>Which Macs does it work on?</summary>
+      <div><p class="muted">macOS 12 Monterey or later, on Apple Silicon and Intel. You need the Claude desktop app and two Claude accounts.</p></div>
+    </details>
+  </section>
+
+  <footer>
+    <span><a href="https://switch.marcobestonzo.com">Download Switch Account for Claude</a> (free, pay what you want)</span>
+    <span>Switch Account for Claude is an independent tool. It is not made by, affiliated with, or endorsed by Anthropic.</span>
+  </footer>
+</main>
+<script>
+const btn = document.getElementById("copy"), cmd = document.getElementById("cmd"), done = document.getElementById("copied");
+btn.addEventListener("click", async () => {
+  try { await navigator.clipboard.writeText(cmd.textContent); btn.textContent = "Copied"; done.hidden = false; }
+  catch (e) { const r = document.createRange(); r.selectNodeContents(cmd); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "Press ⌘C"; }
+});
+</script>
+</body>
+</html>
