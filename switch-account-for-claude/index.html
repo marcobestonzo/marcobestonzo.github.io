@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Switch Account for Claude – use two Claude accounts on Mac</title>
+<meta name="description" content="Free Mac app to switch the Claude desktop app between two accounts, like work and personal, in one click. Both stay signed in. Never reads your Claude logins or tokens.">
+<link rel="canonical" href="https://marcobestonzo.com/switch-account-for-claude/">
+<link rel="icon" href="install/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Switch Account for Claude – two Claude accounts on one Mac">
+<meta property="og:description" content="Switch the Claude desktop app between a work and a personal account in one click. Free Mac app (beta).">
+<meta property="og:url" content="https://marcobestonzo.com/switch-account-for-claude/">
+<meta property="og:image" content="https://marcobestonzo.com/switch-account-for-claude/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Switch Account for Claude",
+  "operatingSystem": "macOS 12 or later",
+  "applicationCategory": "UtilitiesApplication",
+  "description": "Switch the Claude desktop app on Mac between two accounts, such as work and personal, in one click. Both accounts stay signed in.",
+  "url": "https://marcobestonzo.com/switch-account-for-claude/",
+  "downloadUrl": "https://switch.marcobestonzo.com",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Can the Claude desktop app be signed in to two accounts at once?",
+     "acceptedAnswer": {"@type": "Answer", "text": "No. The Claude desktop app on Mac keeps one account signed in at a time, so switching normally means logging out and back in. Switch Account for Claude keeps a separate copy of Claude's data for each account and swaps them in one click, so both stay signed in."}},
+    {"@type": "Question", "name": "How do I switch between a work and a personal Claude account on Mac?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Install Switch Account for Claude, open it once and sign in to your second account. After that, click Switch in the menu bar: Claude quits, swaps to the other account and reopens."}},
+    {"@type": "Question", "name": "Does it read my Claude password or login tokens?",
+     "acceptedAnswer": {"@type": "Answer", "text": "No. It never reads your Claude logins or tokens. It only moves Claude's own data folder on your Mac, and only goes online to check for its own updates."}},
+    {"@type": "Question", "name": "Does it work with Claude Code in the terminal?",
+     "acceptedAnswer": {"@type": "Answer", "text": "No, it switches the Claude desktop app only, including its Code tab. Claude Code in the terminal keeps its own login."}}
+  ]
+}
+</script>
+<style>
+/* Layout: one reading column; hero with download, then how it works, privacy, comparison table, FAQ */
+:root{
+  --bg:#faf9f5; --surface:#ffffff; --fg:#141413; --muted:#6b6860; --line:#e6e3da;
+  --accent:#c8623f; --accent-soft:#f6e3da; --ok:#2e7d4f;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#1f1e1b; --surface:#2b2a27; --fg:#f0eee6; --muted:#a8a498; --line:#3d3b36;
+  --accent:#d97757; --accent-soft:#3a2a23; --ok:#6cc08b; color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 var(--font);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:780px;margin:0 auto;padding-block:48px 56px;display:grid;gap:52px}
+.wrap > *{min-width:0}
+h1{font-size:clamp(2rem,5.4vw,2.9rem);line-height:1.08;margin:0;letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:1.4rem;margin:0;letter-spacing:-.01em;text-wrap:balance}
+p{margin:0;max-width:66ch}
+.muted{color:var(--muted)}
+a{color:var(--accent)}
+header{display:grid;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--muted);font-weight:500}
+.brand img{width:48px;height:48px;border-radius:11px}
+.lede{font-size:1.15rem;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.btn{font:600 17px var(--font);border-radius:12px;padding:14px 22px;background:var(--accent);color:#fff;text-decoration:none;display:inline-flex}
+.btn:focus-visible{outline:3px solid var(--fg);outline-offset:2px}
+.pill{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--fg)}
+.hero-img{width:100%;max-width:100%;height:auto;border-radius:16px;border:1px solid var(--line);display:block}
+section{display:grid;gap:16px}
+ul.points{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+ul.points li{display:grid;grid-template-columns:1.6rem 1fr;gap:10px;align-items:start}
+ul.points li::before{content:"✓";color:var(--ok);font-weight:700}
+.callout{background:var(--accent-soft);border-radius:14px;padding:18px 20px;display:grid;gap:8px}
+.table{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font-weight:600;color:var(--muted)}
+td b{color:var(--fg)}
+details{border-top:1px solid var(--line);padding-block:14px}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:600}
+details p{padding-top:10px;color:var(--muted)}
+footer{color:var(--muted);font-size:14px;display:grid;gap:6px;border-top:1px solid var(--line);padding-top:20px}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header>
+    <div class="brand"><img src="install/icon.png" alt="">Switch Account for Claude <span class="pill">Free · Beta</span></div>
+    <h1>Use two Claude accounts on your Mac, without logging out</h1>
+    <p class="lede">The Claude desktop app keeps one account signed in at a time. Switch Account for Claude swaps it between two accounts, like a work one and a personal one, in one click. Both stay signed in.</p>
+    <div class="cta">
+      <a class="btn" href="https://switch.marcobestonzo.com">Download for Mac</a>
+      <span class="muted">Free, pay what you want · macOS 12+ · Apple Silicon and Intel</span>
+    </div>
+    <img class="hero-img" src="og.jpg" width="1200" height="675" alt="Switch Account for Claude: app icon, Work and Personal accounts, and the three install steps">
+  </header>
+
+  <section aria-labelledby="what">
+    <h2 id="what">What it does</h2>
+    <ul class="points">
+      <li><span><b>One click to switch.</b> Claude quits, swaps to your other account and reopens by itself.</span></li>
+      <li><span><b>Both accounts stay signed in.</b> Each keeps its own login, chats and settings.</span></li>
+      <li><span><b>Always know where you are.</b> A dot in the menu bar shows the active account: white for Work, orange for Personal.</span></li>
+      <li><span><b>Work and personal never mix.</b> Only one account is open at a time, so nothing gets pasted into the wrong chat.</span></li>
+      <li><span><b>Updates itself.</b> New versions install automatically and are signed, so only genuine updates are accepted.</span></li>
+    </ul>
+  </section>
+
+  <section class="callout" aria-labelledby="privacy">
+    <h2 id="privacy">Never reads your Claude logins or tokens</h2>
+    <p>It only moves Claude’s own data folder on your Mac (<code>~/Library/Application Support/Claude</code>), and only goes online to check marcobestonzo.com for its own updates. Your chats and sessions stay where Claude keeps them, encrypted by Claude.</p>
+  </section>
+
+  <section aria-labelledby="compare">
+    <h2 id="compare">Ways to use two Claude accounts on one Mac</h2>
+    <div class="table">
+      <table>
+        <thead><tr><th></th><th>Switching</th><th>Both signed in</th><th>Effort</th></tr></thead>
+        <tbody>
+          <tr><td><b>Log out and back in</b></td><td>Every time, with email codes</td><td>No</td><td>High</td></tr>
+          <tr><td><b>Desktop app + a browser profile</b></td><td>Two different apps</td><td>Yes</td><td>Medium, and features differ</td></tr>
+          <tr><td><b>Switch Account for Claude</b></td><td>One click in the menu bar</td><td>Yes</td><td>Low</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="install">
+    <h2 id="install">Install in 3 steps</h2>
+    <p class="muted">The app isn’t from the App Store, so macOS asks once the first time: drag it into Applications, click <b>Done</b> on the “Not Opened” message, then <b>Open Anyway</b> in System Settings → Privacy &amp; Security. The <a href="install/">illustrated install guide</a> shows exactly where to click.</p>
+  </section>
+
+  <section aria-labelledby="faq">
+    <h2 id="faq">Questions</h2>
+    <div>
+      <details><summary>Can the Claude desktop app be signed in to two accounts at once?</summary>
+        <p>Not by itself: it keeps one account signed in at a time. Switch Account for Claude keeps a separate copy of Claude’s data for each account and swaps them, so both stay signed in and switching takes one click.</p></details>
+      <details><summary>How do I switch between a work and a personal Claude account?</summary>
+        <p>Install the app, open it once and sign in to your second account when Claude reopens. After that, click the dot in the menu bar and choose Switch.</p></details>
+      <details><summary>Does it read my password or login tokens?</summary>
+        <p>No. It never reads your Claude logins or tokens. It only moves folders on your Mac.</p></details>
+      <details><summary>Does it work with Claude Code in the terminal?</summary>
+        <p>It switches the Claude desktop app, including its Code tab. Claude Code in the terminal keeps its own login.</p></details>
+      <details><summary>How many accounts does it support?</summary>
+        <p>Two for now, called Work and Personal. It’s a beta, so feedback on what you need is welcome.</p></details>
+      <details><summary>Is it from Anthropic?</summary>
+        <p>No. It’s an independent tool, not made by, affiliated with, or endorsed by Anthropic.</p></details>
+    </div>
+  </section>
+
+  <footer>
+    <span><a href="https://switch.marcobestonzo.com">Download Switch Account for Claude</a> · <a href="install/">Install guide</a></span>
+    <span>Switch Account for Claude is an independent tool. It is not made by, affiliated with, or endorsed by Anthropic. Claude is a trademark of Anthropic.</span>
+  </footer>
+</main>
+</body>
+</html>
